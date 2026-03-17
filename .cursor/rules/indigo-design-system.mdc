@@ -1,0 +1,230 @@
+# Cursor Rules — Indigo Design System
+
+## Monorepo Structure
+- `packages/tokens` → @indigo/tokens (CSS variables + Tailwind preset)
+- `packages/components` → @indigo/components (React component library) — ensure package.json `"name"` is `"@indigo/components"`
+- `apps/storybook` → dev environment only, never published
+
+## Stack
+- React 18+, TypeScript, strict mode
+- Tailwind CSS v4 with @indigo/tokens preset
+- In apps (e.g. Storybook), Tailwind v4 uses `@import "tailwindcss"` in CSS; use the @indigo/tokens preset where token utilities are needed
+- shadcn/ui with Base UI primitives
+- Storybook 10 with Vite builder
+
+## Component Rules
+- All components go in `packages/components/src/components/[ComponentName]/`
+- Every component needs 4 files:
+  - `ComponentName.tsx` — component implementation
+  - `ComponentName.types.ts` — props interface and variant types
+  - `ComponentName.stories.tsx` — Storybook stories
+  - `index.ts` — re-export
+- Use named exports in component files
+- Export as default in `index.ts`
+- Props interfaces live in `.types.ts` — always import from there, never inline
+
+## Figma Naming Conventions
+- Figma component names are PascalCase and map directly to React component names — no transformation
+- Figma property names are camelCase and map directly to React prop names — no transformation
+- Example: Figma component `ButtonGroup`, property `isDisabled` → React `<ButtonGroup isDisabled />`
+- Example: Figma component `TextInput`, property `hasError` → React `<TextInput hasError />`
+- When reading a Figma node via MCP, use the component name and property names exactly as they appear
+
+## Figma MCP Workflow
+- When given a Figma node, read all its variables, properties, and slots via the MCP
+- Always resolve Figma Variables to their Tailwind class via the Code Syntax property (see below)
+- Map Figma auto-layout direction → `flex-row` or `flex-col`
+- Map Figma auto-layout gap → `gap-ds2-{size}`
+- Map Figma padding (uniform) → `p-ds2-{size}`
+- Map Figma padding (per side) → `pt-ds2-{size} pr-ds2-{size} pb-ds2-{size} pl-ds2-{size}`
+- Map Figma horizontal padding → `px-ds2-{size}`, vertical → `py-ds2-{size}`
+- Map Figma fill color → the corresponding `bg-ds2-*` token class from Code Syntax
+- Map Figma text color → the corresponding `text-ds2-*` token class from Code Syntax
+- Map Figma stroke color → the corresponding `border-ds2-*` token class from Code Syntax
+- Map Figma corner radius → the corresponding `rounded-ds2-*` token class from Code Syntax
+- Map Figma typography style → the corresponding `ds2-*` typography class
+- Map Figma opacity → Tailwind `opacity-*` utility
+- Map Figma shadow → Tailwind `shadow-*` utility
+- Never guess a token — if a Figma variable doesn't have a clear mapping, flag it
+
+## Figma Variable → Tailwind Class Resolution
+- Figma Variables have a Code Syntax property that contains the exact Tailwind class to use
+- When reading a node via MCP, always use the Code Syntax value for the class — never infer or guess
+- Example: variable `ds2-background-brand-base` has Code Syntax `bg-ds2-brand-base` → use `bg-ds2-brand-base`
+- The token reference section below is a fallback for cases where no Figma node is provided
+
+## Figma Component Variants → React Props
+- Figma variant properties (e.g. `variant=primary|secondary|ghost`) → string literal union type
+- Figma boolean properties (e.g. `isDisabled`, `isLoading`) → optional boolean React prop
+- Figma instance swap properties (slots) → ReactNode prop (see Slots section below)
+- Figma text properties → string prop or `children`
+- Figma enum properties with 2 opposite values → boolean prop (e.g. `isFullWidth`)
+- All variant combinations from Figma must be representable via props — no variant should be unreachable
+
+## Figma Slots
+- A slot is a Figma instance swap property — a placeholder that accepts another component
+- Slots map to `ReactNode` props in React
+- Name the prop exactly as the Figma slot is named (already camelCase)
+- Common slot examples:
+  - `leadingIcon?: ReactNode` — icon before label
+  - `trailingIcon?: ReactNode` — icon after label
+  - `avatar?: ReactNode` — avatar inside a list item or header
+  - `badge?: ReactNode` — badge overlaid on a component
+  - `prefix?: ReactNode` — prefix inside an input
+  - `suffix?: ReactNode` — suffix inside an input
+  - `emptyState?: ReactNode` — empty state slot inside a container
+- Slots that are optional default to `undefined`
+- Only render a slot when the prop is provided:
+```tsx
+  {leadingIcon && (
+    <span className="flex items-center fill-ds2-default">
+      {leadingIcon}
+    </span>
+  )}
+```
+- Never hardcode icon components inside a slot wrapper — keep slots generic
+- If a Figma slot is always visible and never empty, make the prop required
+
+## Styling Rules — CRITICAL
+- Use ONLY Tailwind utility classes — no inline styles, no CSS modules, no styled-components
+- ALL colours must use ds2- prefixed token classes (e.g. `bg-ds2-brand-base`, `text-ds2-default`)
+- ALL spacing must use ds2- prefixed token classes (e.g. `p-ds2-s`, `gap-ds2-m`)
+- ALL border radius must use ds2- prefixed token classes (e.g. `rounded-ds2-m`)
+- ALL border width must use ds2- prefixed token classes (e.g. `border-ds2-s`)
+- NEVER hardcode hex values, pixel values, rem values, or rgba
+- NEVER use arbitrary Tailwind values like `bg-[#1856f5]` or `p-[16px]`
+- NEVER use Tailwind's default color palette (e.g. `bg-blue-500`, `text-gray-700`)
+- NEVER use Tailwind's default spacing scale (e.g. `p-4`, `gap-2`) for component spacing
+- Use `cn()` from `@/lib/utils` for all conditional and merged class logic
+- Dark mode via `dark:` variant only — never toggle manually
+
+## Token Reference (fallback — prefer Code Syntax from Figma MCP)
+### Backgrounds
+- `bg-ds2-neutral` / `bg-ds2-neutral-hover` / `bg-ds2-neutral-pressed`
+- `bg-ds2-neutral-subtle` / `bg-ds2-neutral-subtle-hover` / `bg-ds2-neutral-subtle-pressed`
+- `bg-ds2-neutral-bold` / `bg-ds2-neutral-bold-hover` / `bg-ds2-neutral-bold-pressed`
+- `bg-ds2-input` / `bg-ds2-input-hover` / `bg-ds2-input-pressed`
+- `bg-ds2-disabled`
+- `bg-ds2-selected` / `bg-ds2-selected-hover` / `bg-ds2-selected-bold`
+- `bg-ds2-brand-subtlest` / `bg-ds2-brand-subtler` / `bg-ds2-brand-subtle` / `bg-ds2-brand-base` / `bg-ds2-brand-bold` / `bg-ds2-brand-bolder` / `bg-ds2-brand-boldest`
+- `bg-ds2-danger` / `bg-ds2-danger-bold`
+- `bg-ds2-warning` / `bg-ds2-warning-bold`
+- `bg-ds2-success` / `bg-ds2-success-bold`
+- `bg-ds2-discovery` / `bg-ds2-discovery-bold`
+- `bg-ds2-information` / `bg-ds2-information-bold`
+- `bg-ds2-surface` / `bg-ds2-surface-hovered` / `bg-ds2-surface-sunken`
+- `bg-ds2-overlay` / `bg-ds2-raised`
+- `bg-ds2-skeleton-base` / `bg-ds2-skeleton-subtle`
+- `bg-ds2-blanket`
+
+### Text Colors
+- `text-ds2-default` — primary body text
+- `text-ds2-subtle` — secondary text
+- `text-ds2-title` — headings
+- `text-ds2-caption` — captions and helper text
+- `text-ds2-inverted` — text on dark or brand backgrounds
+- `text-ds2-disabled` — disabled state text
+- `text-ds2-selected` / `text-ds2-brand` / `text-ds2-link` / `text-ds2-link-pressed` / `text-ds2-link-visited`
+- `text-ds2-danger` / `text-ds2-warning` / `text-ds2-success` / `text-ds2-discovery` / `text-ds2-information`
+
+### Border Colors
+- `border-ds2-default` / `border-ds2-subtle` / `border-ds2-bold`
+- `border-ds2-disabled`
+- `border-ds2-focused` — focus ring color
+- `border-ds2-selected` / `border-ds2-brand` / `border-ds2-input`
+- `border-ds2-danger` / `border-ds2-warning` / `border-ds2-success` / `border-ds2-discovery` / `border-ds2-information`
+
+### Fill (SVG Icons)
+- `fill-ds2-default` / `fill-ds2-subtle` / `fill-ds2-inverted` / `fill-ds2-disabled`
+- `fill-ds2-selected` / `fill-ds2-brand`
+- `fill-ds2-danger` / `fill-ds2-warning` / `fill-ds2-success` / `fill-ds2-discovery` / `fill-ds2-information`
+
+### Spacing
+- `{p|px|py|pt|pr|pb|pl|m|mx|my|mt|mr|mb|ml|gap}-ds2-{none|xxs|xs|s|m|l|xl|xxl}`
+- Prefer `gap-ds2-{size}` for flex/grid spacing; use `space-x-ds2-*` / `space-y-ds2-*` only if the tokens preset extends those utilities
+- none=0px, xxs=4px, xs=8px, s=16px, m=24px, l=32px, xl=48px, xxl=64px
+
+### Border Radius
+- `rounded-ds2-none` / `rounded-ds2-s` / `rounded-ds2-m` / `rounded-ds2-l` / `rounded-ds2-full`
+
+### Border Width
+- `border-ds2-none` / `border-ds2-s` (1px) / `border-ds2-m` (2px) / `border-ds2-l` (3px)
+
+### Typography Classes
+- Display: `ds2-display-lg` / `ds2-display-md` / `ds2-display-sm`
+- Headline: `ds2-headline-lg` / `ds2-headline-md` / `ds2-headline-sm`
+- Title: `ds2-title-lg` / `ds2-title-md` / `ds2-title-sm`
+- Body: `ds2-body-lg` / `ds2-body-md` / `ds2-body-sm`
+- Caption: `ds2-caption-lg` / `ds2-caption-md` / `ds2-caption-sm`
+- Utility: `ds2-button` / `ds2-tag` / `ds2-label`
+
+## Variants Pattern — use cva
+- Import `cva` and `type VariantProps` from `class-variance-authority`
+- Define base classes and all variant maps in the component file
+- Always use token classes inside cva — never hardcoded values
+- Expose VariantProps in the component props interface via intersection type
+- Example:
+```tsx
+  const buttonVariants = cva(
+    'inline-flex items-center justify-center ds2-button transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ds2-focused disabled:pointer-events-none',
+    {
+      variants: {
+        variant: {
+          primary: 'bg-ds2-brand-base text-ds2-inverted hover:bg-ds2-brand-bold',
+          secondary: 'bg-ds2-neutral text-ds2-default hover:bg-ds2-neutral-hover',
+          ghost: 'bg-transparent text-ds2-default hover:bg-ds2-neutral',
+          danger: 'bg-ds2-danger-bold text-ds2-inverted hover:bg-ds2-danger-bold-hover',
+        },
+        size: {
+          sm: 'h-8 px-ds2-xs rounded-ds2-m',
+          md: 'h-10 px-ds2-s rounded-ds2-m',
+          lg: 'h-12 px-ds2-s rounded-ds2-l',
+        },
+      },
+      defaultVariants: {
+        variant: 'primary',
+        size: 'md',
+      },
+    }
+  )
+```
+
+## Storybook Rules
+- Story title format: `'Indigo/ComponentName'`
+- Use `satisfies Meta<typeof Component>` pattern
+- Export a `Default` story plus one story per significant variant
+- Use `argTypes` to expose all props in the Controls panel
+- Import component types from `.types.ts`
+- Keep stories thin — no business logic in stories
+- Example:
+```tsx
+  const meta = {
+    title: 'Indigo/Button',
+    component: Button,
+    tags: ['autodocs'],
+    argTypes: {
+      variant: { control: 'select', options: ['primary', 'secondary', 'ghost', 'danger'] },
+      size: { control: 'select', options: ['sm', 'md', 'lg'] },
+      isDisabled: { control: 'boolean' },
+    },
+  } satisfies Meta<typeof Button>
+```
+
+## Accessibility
+- All interactive elements need appropriate aria attributes
+- Use semantic HTML — no div-soup for buttons, inputs, links
+- Prefer shadcn/ui Base UI primitives for accessibility guarantees
+- All focus states must use: `focus-visible:ring-2 focus-visible:ring-ds2-focused focus-visible:outline-none` — ensure the tokens preset defines a ring color (e.g. `ring-ds2-focused`) or use `focus-visible:ring-2 focus-visible:outline-none` with ring color from `var(--ds2-border-focused)` if needed
+- Disabled states must use: `disabled:opacity-50 disabled:pointer-events-none`
+- Loading states must set `aria-busy="true"` and `aria-disabled="true"`
+
+## Do Not
+- Do not use `any` — type everything explicitly
+- Do not install new packages without flagging it first
+- Do not create one-off colour or spacing values — if a token is missing, flag it
+- Do not touch `packages/components/src/components/ui/` — shadcn territory
+- Do not use `@tailwind base/components/utilities` — Tailwind v4 uses `@import "tailwindcss"`
+- Do not add legacy DS1 or non-ds2- classes to any new component
+- Do not hardcode font sizes, weights, or line heights — use ds2- typography classes
+- Do not use Tailwind's built-in color or spacing scales in components
+- Do not transform Figma component or property names — use them exactly as written
