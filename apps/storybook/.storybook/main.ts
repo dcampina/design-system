@@ -13,14 +13,12 @@ function getAbsolutePath(value: string) {
 }
 const config: StorybookConfig = {
   "stories": [
-    "../src/**/*.mdx",
+    // MDX excluded: addon-docs was removed (hoisting), so MDX isn’t compiled and would break the build
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
-    // @chromatic-com/storybook removed: incompatible with Storybook 10 (requires 'storybook/internal/core-server')
-    getAbsolutePath('@storybook/addon-vitest'),
-    getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath('@storybook/addon-docs')
+    // addon-vitest and addon-docs removed: monorepo hoisting breaks their require('storybook/internal/node-logger')
+    getAbsolutePath('@storybook/addon-a11y')
   ],
   "framework": getAbsolutePath('@storybook/react-vite')
 };

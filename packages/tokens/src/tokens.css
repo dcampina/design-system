@@ -1,0 +1,640 @@
+/* ==========================================================================
+   @indigo/tokens — tokens.css
+   
+   Two layers:
+   1. Primitive palette  — raw values, mode-agnostic
+   2. Semantic tokens    — reference primitives, swapped per mode
+   
+   DO NOT edit manually — kept in sync with Figma Variables.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   PRIMITIVE TOKENS
+   Raw values only. Never use these directly in components.
+   -------------------------------------------------------------------------- */
+   :root {
+
+    /* Neutral / Light */
+    --colours-neutral-light-0:   #ffffff;
+    --colours-neutral-light-10:  #f7f8f9;
+    --colours-neutral-light-20:  #f1f2f4;
+    --colours-neutral-light-30:  #dcdfe4;
+    --colours-neutral-light-40:  #b3b9c4;
+    --colours-neutral-light-50:  #8590a2;
+    --colours-neutral-light-60:  #758195;
+    --colours-neutral-light-70:  #626f86;
+    --colours-neutral-light-80:  #44546f;
+    --colours-neutral-light-90:  #2c3e5d;
+    --colours-neutral-light-100: #172b4d;
+    --colours-neutral-light-110: #091e42;
+  
+    /* Neutral / Dark */
+    --colours-neutral-dark-0:    #161a1d;
+    --colours-neutral-dark-10:   #1d2125;
+    --colours-neutral-dark-20:   #22272b;
+    --colours-neutral-dark-25:   #282e33;
+    --colours-neutral-dark-30:   #282e33;
+    --colours-neutral-dark-40:   #454f59;
+    --colours-neutral-dark-50:   #596773;
+    --colours-neutral-dark-60:   #738496;
+    --colours-neutral-dark-70:   #8c9bab;
+    --colours-neutral-dark-80:   #9fadbc;
+    --colours-neutral-dark-90:   #b6c2cf;
+    --colours-neutral-dark-100:  #c7d1db;
+    --colours-neutral-dark-110:  #dee4ea;
+  
+    /* Alpha / Light */
+    --colours-alpha-light-10: #091e4207;
+    --colours-alpha-light-20: #091e420f;
+    --colours-alpha-light-30: #091e4223;
+    --colours-alpha-light-40: #091e424f;
+    --colours-alpha-light-50: #091e427c;
+  
+    /* Alpha / Dark */
+    --colours-alpha-dark-10: #bcd6f00a;
+    --colours-alpha-dark-20: #a1bdd914;
+    --colours-alpha-dark-30: #a6c5e228;
+    --colours-alpha-dark-40: #bfdbf847;
+    --colours-alpha-dark-50: #9bb4ca7f;
+  
+    /* Blue */
+    --colours-blue-10:  #e9f2ff;
+    --colours-blue-20:  #cce0ff;
+    --colours-blue-30:  #85b8ff;
+    --colours-blue-40:  #579dff;
+    --colours-blue-50:  #388bff;
+    --colours-blue-60:  #1d7afc;
+    --colours-blue-70:  #1856f5;
+    --colours-blue-80:  #004ab1;
+    --colours-blue-90:  #09326c;
+    --colours-blue-100: #1c2b41;
+  
+    /* Red */
+    --colours-red-10:  #ffeceb;
+    --colours-red-20:  #ffd5d2;
+    --colours-red-30:  #fd9891;
+    --colours-red-40:  #f87168;
+    --colours-red-50:  #f15b50;
+    --colours-red-60:  #e2483d;
+    --colours-red-70:  #c9372c;
+    --colours-red-80:  #ae2e24;
+    --colours-red-90:  #5d1f1a;
+    --colours-red-100: #42221f;
+  
+    /* Yellow */
+    --colours-yellow-10:  #fff7d6;
+    --colours-yellow-20:  #f8e6a0;
+    --colours-yellow-30:  #f5cd47;
+    --colours-yellow-40:  #e2b203;
+    --colours-yellow-50:  #cf9f02;
+    --colours-yellow-60:  #b38600;
+    --colours-yellow-70:  #946f00;
+    --colours-yellow-80:  #7f5f01;
+    --colours-yellow-90:  #533f04;
+    --colours-yellow-100: #332e1b;
+  
+    /* Green */
+    --colours-green-10:  #dcfff1;
+    --colours-green-20:  #baf3db;
+    --colours-green-30:  #7ee2b8;
+    --colours-green-40:  #4bce97;
+    --colours-green-50:  #2abb7f;
+    --colours-green-60:  #22a06b;
+    --colours-green-70:  #1f845a;
+    --colours-green-80:  #216e4e;
+    --colours-green-90:  #164b35;
+    --colours-green-100: #1c3329;
+  
+    /* Purple */
+    --colours-purple-10:  #f3f0ff;
+    --colours-purple-20:  #dfd8fd;
+    --colours-purple-30:  #b8acf6;
+    --colours-purple-40:  #9f8fef;
+    --colours-purple-50:  #8f7ee7;
+    --colours-purple-60:  #8270db;
+    --colours-purple-70:  #6e5dc6;
+    --colours-purple-80:  #5e4db2;
+    --colours-purple-90:  #352c63;
+    --colours-purple-100: #2b273f;
+  
+    /* Magenta */
+    --colours-magenta-10:  #fbe4ea;
+    --colours-magenta-20:  #f5bacc;
+    --colours-magenta-30:  #ef8eaa;
+    --colours-magenta-40:  #e86389;
+    --colours-magenta-50:  #e24471;
+    --colours-magenta-60:  #dd2a5a;
+    --colours-magenta-70:  #cc2657;
+    --colours-magenta-80:  #a21e4e;
+    --colours-magenta-90:  #901a4a;
+    --colours-magenta-100: #7e1646;
+  
+    /* Orange */
+    --colours-orange-10:  #fff3eb;
+    --colours-orange-20:  #fedec8;
+    --colours-orange-30:  #fec195;
+    --colours-orange-40:  #fea362;
+    --colours-orange-50:  #f38a3f;
+    --colours-orange-60:  #e56910;
+    --colours-orange-70:  #c25100;
+    --colours-orange-80:  #a54800;
+    --colours-orange-90:  #702e00;
+    --colours-orange-100: #38291e;
+  
+    /* Lime */
+    --colours-lime-10:  #efffd6;
+    --colours-lime-20:  #d3f1a7;
+    --colours-lime-30:  #b3df72;
+    --colours-lime-40:  #94c748;
+    --colours-lime-50:  #82b536;
+    --colours-lime-60:  #6a9a23;
+    --colours-lime-70:  #59851f;
+    --colours-lime-80:  #4c6b1f;
+    --colours-lime-90:  #37471f;
+    --colours-lime-100: #28311b;
+  
+    /* Teal */
+    --colours-teal-10:  #e0f3f2;
+    --colours-teal-20:  #b2e1de;
+    --colours-teal-30:  #7ecfc9;
+    --colours-teal-40:  #47bbb3;
+    --colours-teal-50:  #0eaca2;
+    --colours-teal-60:  #009d90;
+    --colours-teal-70:  #009083;
+    --colours-teal-80:  #007f72;
+    --colours-teal-90:  #006f63;
+    --colours-teal-100: #005346;
+  
+    /* Floats (spacing & radius primitives) */
+    --floats-none:     0px;
+    --floats-10:       1px;
+    --floats-20:       2px;
+    --floats-30:       3px;
+    --floats-40:       4px;
+    --floats-80:       8px;
+    --floats-160:      16px;
+    --floats-240:      24px;
+    --floats-320:      32px;
+    --floats-480:      48px;
+    --floats-640:      64px;
+    --floats-circular: 9999px;
+  }
+  
+  
+  /* --------------------------------------------------------------------------
+     SEMANTIC TOKENS — LIGHT MODE (:root)
+     All values reference primitives. Never hardcode hex here.
+     -------------------------------------------------------------------------- */
+  :root {
+  
+    /* BACKGROUND — NEUTRAL */
+    --ds2-background-neutral:                var(--colours-alpha-light-20);
+    --ds2-background-neutral-hover:          var(--colours-alpha-light-30);
+    --ds2-background-neutral-pressed:        var(--colours-alpha-light-40);
+    --ds2-background-neutral-subtle:         var(--colours-neutral-light-0);
+    --ds2-background-neutral-subtle-hover:   var(--colours-alpha-light-20);
+    --ds2-background-neutral-subtle-pressed: var(--colours-alpha-light-30);
+    --ds2-background-neutral-bold:           var(--colours-neutral-light-80);
+    --ds2-background-neutral-bold-hover:     var(--colours-neutral-light-90);
+    --ds2-background-neutral-bold-pressed:   var(--colours-neutral-light-100);
+  
+    /* BACKGROUND — INPUT */
+    --ds2-background-input:         var(--colours-neutral-light-0);
+    --ds2-background-input-hover:   var(--colours-neutral-light-10);
+    --ds2-background-input-pressed: var(--colours-neutral-light-0);
+  
+    /* BACKGROUND — DISABLED */
+    --ds2-background-disabled: var(--colours-alpha-light-10);
+  
+    /* BACKGROUND — SELECTED */
+    --ds2-background-selected:              var(--colours-blue-10);
+    --ds2-background-selected-hover:        var(--colours-blue-20);
+    --ds2-background-selected-pressed:      var(--colours-blue-30);
+    --ds2-background-selected-bold:         var(--colours-blue-70);
+    --ds2-background-selected-bold-hover:   var(--colours-blue-80);
+    --ds2-background-selected-bold-pressed: var(--colours-blue-90);
+  
+    /* BACKGROUND — DANGER */
+    --ds2-background-danger:              var(--colours-red-10);
+    --ds2-background-danger-hover:        var(--colours-red-20);
+    --ds2-background-danger-pressed:      var(--colours-red-30);
+    --ds2-background-danger-bold:         var(--colours-red-70);
+    --ds2-background-danger-bold-hover:   var(--colours-red-80);
+    --ds2-background-danger-bold-pressed: var(--colours-red-90);
+  
+    /* BACKGROUND — WARNING */
+    --ds2-background-warning:              var(--colours-yellow-10);
+    --ds2-background-warning-hover:        var(--colours-yellow-20);
+    --ds2-background-warning-pressed:      var(--colours-yellow-30);
+    --ds2-background-warning-bold:         var(--colours-yellow-40);
+    --ds2-background-warning-bold-hover:   var(--colours-yellow-50);
+    --ds2-background-warning-bold-pressed: var(--colours-yellow-60);
+  
+    /* BACKGROUND — SUCCESS */
+    --ds2-background-success:              var(--colours-green-10);
+    --ds2-background-success-hover:        var(--colours-green-20);
+    --ds2-background-success-pressed:      var(--colours-green-30);
+    --ds2-background-success-bold:         var(--colours-green-70);
+    --ds2-background-success-bold-hover:   var(--colours-green-80);
+    --ds2-background-success-bold-pressed: var(--colours-green-90);
+  
+    /* BACKGROUND — DISCOVERY */
+    --ds2-background-discovery:              var(--colours-purple-10);
+    --ds2-background-discovery-hover:        var(--colours-purple-20);
+    --ds2-background-discovery-pressed:      var(--colours-purple-30);
+    --ds2-background-discovery-bold:         var(--colours-purple-70);
+    --ds2-background-discovery-bold-hover:   var(--colours-purple-80);
+    --ds2-background-discovery-bold-pressed: var(--colours-purple-90);
+  
+    /* BACKGROUND — INFORMATION */
+    --ds2-background-information:              var(--colours-blue-10);
+    --ds2-background-information-hover:        var(--colours-blue-20);
+    --ds2-background-information-pressed:      var(--colours-blue-30);
+    --ds2-background-information-bold:         var(--colours-blue-70);
+    --ds2-background-information-bold-hover:   var(--colours-blue-80);
+    --ds2-background-information-bold-pressed: var(--colours-blue-90);
+  
+    /* BACKGROUND — BRAND */
+    --ds2-background-brand-subtlest: var(--colours-blue-10);
+    --ds2-background-brand-subtler:  var(--colours-blue-30);
+    --ds2-background-brand-subtle:   var(--colours-blue-50);
+    --ds2-background-brand-base:     var(--colours-blue-70);
+    --ds2-background-brand-bold:     var(--colours-blue-80);
+    --ds2-background-brand-bolder:   var(--colours-blue-90);
+    --ds2-background-brand-boldest:  var(--colours-blue-100);
+  
+    /* SKELETON */
+    --ds2-skeleton-base:   var(--colours-alpha-light-20);
+    --ds2-skeleton-subtle: var(--colours-alpha-light-10);
+  
+    /* BLANKET */
+    --ds2-blanket-default:  var(--colours-alpha-light-50);
+    --ds2-blanket-selected: rgba(56, 139, 255, 0.08);
+  
+    /* ELEVATION */
+    --ds2-elevation-surface:              var(--colours-neutral-light-10);
+    --ds2-elevation-surface-hovered:      var(--colours-neutral-light-20);
+    --ds2-elevation-surface-pressed:      var(--colours-neutral-light-30);
+    --ds2-elevation-surface-registration: var(--colours-neutral-light-0);
+    --ds2-elevation-surface-sunken:       var(--colours-neutral-light-10);
+    --ds2-elevation-overlay:              var(--colours-neutral-light-0);
+    --ds2-elevation-overlay-hovered:      var(--colours-neutral-light-20);
+    --ds2-elevation-overlay-pressed:      var(--colours-neutral-light-30);
+    --ds2-elevation-raised:               var(--colours-neutral-light-0);
+    --ds2-elevation-raised-hovered:       var(--colours-neutral-light-20);
+    --ds2-elevation-raised-pressed:       var(--colours-neutral-light-30);
+  
+    /* TEXT */
+    --ds2-text-default:      var(--colours-neutral-light-100);
+    --ds2-text-subtle:       var(--colours-neutral-light-80);
+    --ds2-text-title:        var(--colours-neutral-light-110);
+    --ds2-text-caption:      var(--colours-neutral-light-70);
+    --ds2-text-inverted:     var(--colours-neutral-light-0);
+    --ds2-text-disabled:     var(--colours-alpha-light-40);
+    --ds2-text-selected:     var(--colours-blue-70);
+    --ds2-text-brand:        var(--colours-blue-70);
+    --ds2-text-danger:       var(--colours-red-70);
+    --ds2-text-warning:      var(--colours-yellow-50);
+    --ds2-text-success:      var(--colours-green-70);
+    --ds2-text-discovery:    var(--colours-purple-60);
+    --ds2-text-information:  var(--colours-blue-60);
+    --ds2-text-link-default: var(--colours-blue-70);
+    --ds2-text-link-pressed: var(--colours-blue-80);
+    --ds2-text-link-visited: var(--colours-purple-60);
+  
+    /* ICON */
+    --ds2-icon-default:     var(--colours-neutral-light-80);
+    --ds2-icon-subtle:      var(--colours-neutral-light-70);
+    --ds2-icon-inverted:    var(--colours-neutral-light-0);
+    --ds2-icon-disabled:    var(--colours-alpha-light-40);
+    --ds2-icon-selected:    var(--colours-blue-70);
+    --ds2-icon-brand:       var(--colours-blue-70);
+    --ds2-icon-danger:      var(--colours-red-60);
+    --ds2-icon-warning:     var(--colours-yellow-60);
+    --ds2-icon-success:     var(--colours-green-60);
+    --ds2-icon-discovery:   var(--colours-purple-60);
+    --ds2-icon-information: var(--colours-blue-50);
+  
+    /* BORDER */
+    --ds2-border-default:     var(--colours-alpha-light-30);
+    --ds2-border-subtle:      var(--colours-alpha-light-20);
+    --ds2-border-bold:        var(--colours-neutral-light-60);
+    --ds2-border-disabled:    var(--colours-alpha-light-20);
+    --ds2-border-focused:     var(--colours-blue-50);
+    --ds2-border-selected:    var(--colours-blue-70);
+    --ds2-border-input:       var(--colours-alpha-light-40);
+    --ds2-border-brand:       var(--colours-blue-70);
+    --ds2-border-danger:      var(--colours-red-50);
+    --ds2-border-warning:     var(--colours-yellow-50);
+    --ds2-border-success:     var(--colours-green-60);
+    --ds2-border-discovery:   var(--colours-purple-50);
+    --ds2-border-information: var(--colours-blue-50);
+  
+    /* CHART */
+    --ds2-chart-brand:              var(--colours-blue-70);
+    --ds2-chart-brand-hover:        var(--colours-blue-50);
+    --ds2-chart-category-1:         var(--colours-blue-50);
+    --ds2-chart-category-1-hover:   var(--colours-blue-70);
+    --ds2-chart-category-1-pressed: var(--colours-blue-90);
+    --ds2-chart-category-2:         var(--colours-teal-50);
+    --ds2-chart-category-2-hover:   var(--colours-teal-70);
+    --ds2-chart-category-2-pressed: var(--colours-teal-90);
+    --ds2-chart-category-3:         var(--colours-magenta-50);
+    --ds2-chart-category-3-hover:   var(--colours-magenta-70);
+    --ds2-chart-category-3-pressed: var(--colours-magenta-90);
+    --ds2-chart-category-4:         var(--colours-purple-50);
+    --ds2-chart-category-4-hover:   var(--colours-purple-70);
+    --ds2-chart-category-4-pressed: var(--colours-purple-90);
+    --ds2-chart-category-5:         var(--colours-orange-50);
+    --ds2-chart-category-5-hover:   var(--colours-orange-70);
+    --ds2-chart-category-5-pressed: var(--colours-orange-90);
+    --ds2-chart-success:            var(--colours-green-60);
+    --ds2-chart-success-hover:      var(--colours-green-70);
+    --ds2-chart-warning:            var(--colours-yellow-60);
+    --ds2-chart-warning-hover:      var(--colours-yellow-70);
+    --ds2-chart-danger:             var(--colours-red-60);
+    --ds2-chart-danger-hover:       var(--colours-red-70);
+    --ds2-chart-discovery:          var(--colours-purple-60);
+    --ds2-chart-discovery-hover:    var(--colours-purple-70);
+    --ds2-chart-information:        var(--colours-blue-60);
+    --ds2-chart-information-hover:  var(--colours-blue-70);
+
+    /* BACKGROUND — ACCENT (green, magenta, orange, yellow, lime, red, blue, purple, teal) */
+    --ds2-background-accent-green-subtle:         var(--colours-green-10);
+    --ds2-background-accent-green-subtle-hover:   var(--colours-green-20);
+    --ds2-background-accent-green-subtle-pressed: var(--colours-green-30);
+    --ds2-background-accent-green-bold:           var(--colours-green-70);
+    --ds2-background-accent-green-bold-hover:    var(--colours-green-80);
+    --ds2-background-accent-green-bold-pressed:   var(--colours-green-90);
+
+    --ds2-background-accent-magenta-subtle:         var(--colours-magenta-10);
+    --ds2-background-accent-magenta-subtle-hover:   var(--colours-magenta-20);
+    --ds2-background-accent-magenta-subtle-pressed: var(--colours-magenta-30);
+    --ds2-background-accent-magenta-bold:           var(--colours-magenta-70);
+    --ds2-background-accent-magenta-bold-hover:     var(--colours-magenta-80);
+    --ds2-background-accent-magenta-bold-pressed:   var(--colours-magenta-90);
+
+    --ds2-background-accent-orange-subtle:         var(--colours-orange-10);
+    --ds2-background-accent-orange-subtle-hover:   var(--colours-orange-20);
+    --ds2-background-accent-orange-subtle-pressed: var(--colours-orange-30);
+    --ds2-background-accent-orange-bold:           var(--colours-orange-70);
+    --ds2-background-accent-orange-bold-hover:     var(--colours-orange-80);
+    --ds2-background-accent-orange-bold-pressed:   var(--colours-orange-90);
+
+    --ds2-background-accent-yellow-subtle:         var(--colours-yellow-10);
+    --ds2-background-accent-yellow-subtle-hover:   var(--colours-yellow-20);
+    --ds2-background-accent-yellow-subtle-pressed: var(--colours-yellow-30);
+    --ds2-background-accent-yellow-bold:           var(--colours-yellow-40);
+    --ds2-background-accent-yellow-bold-hover:     var(--colours-yellow-50);
+    --ds2-background-accent-yellow-bold-pressed:   var(--colours-yellow-60);
+
+    --ds2-background-accent-lime-subtle:         var(--colours-lime-10);
+    --ds2-background-accent-lime-subtle-hover:   var(--colours-lime-20);
+    --ds2-background-accent-lime-subtle-pressed: var(--colours-lime-30);
+    --ds2-background-accent-lime-bold:           var(--colours-lime-70);
+    --ds2-background-accent-lime-bold-hover:     var(--colours-lime-80);
+    --ds2-background-accent-lime-bold-pressed:   var(--colours-lime-90);
+
+    --ds2-background-accent-red-subtle:         var(--colours-red-10);
+    --ds2-background-accent-red-subtle-hover:   var(--colours-red-20);
+    --ds2-background-accent-red-subtle-pressed: var(--colours-red-30);
+    --ds2-background-accent-red-bold:           var(--colours-red-70);
+    --ds2-background-accent-red-bold-hover:     var(--colours-red-80);
+    --ds2-background-accent-red-bold-pressed:   var(--colours-red-90);
+
+    --ds2-background-accent-blue-subtle:         var(--colours-blue-10);
+    --ds2-background-accent-blue-subtle-hover:   var(--colours-blue-20);
+    --ds2-background-accent-blue-subtle-pressed: var(--colours-blue-30);
+    --ds2-background-accent-blue-bold:           var(--colours-blue-70);
+    --ds2-background-accent-blue-bold-hover:     var(--colours-blue-80);
+    --ds2-background-accent-blue-bold-pressed:   var(--colours-blue-90);
+
+    --ds2-background-accent-purple-subtle:         var(--colours-purple-10);
+    --ds2-background-accent-purple-subtle-hover:   var(--colours-purple-20);
+    --ds2-background-accent-purple-subtle-pressed: var(--colours-purple-30);
+    --ds2-background-accent-purple-bold:           var(--colours-purple-70);
+    --ds2-background-accent-purple-bold-hover:     var(--colours-purple-80);
+    --ds2-background-accent-purple-bold-pressed:   var(--colours-purple-90);
+
+    --ds2-background-accent-teal-subtle:         var(--colours-teal-10);
+    --ds2-background-accent-teal-subtle-hover:   var(--colours-teal-20);
+    --ds2-background-accent-teal-subtle-pressed: var(--colours-teal-30);
+    --ds2-background-accent-teal-bold:           var(--colours-teal-70);
+    --ds2-background-accent-teal-bold-hover:     var(--colours-teal-80);
+    --ds2-background-accent-teal-bold-pressed:   var(--colours-teal-90);
+
+    /* BORDER — ACCENT */
+    --ds2-border-accent-blue:    var(--colours-blue-70);
+    --ds2-border-accent-red:    var(--colours-red-60);
+    --ds2-border-accent-orange: var(--colours-orange-60);
+    --ds2-border-accent-yellow: var(--colours-yellow-60);
+    --ds2-border-accent-lime:   var(--colours-lime-60);
+    --ds2-border-accent-green:  var(--colours-green-60);
+    --ds2-border-accent-teal:   var(--colours-teal-60);
+    --ds2-border-accent-purple: var(--colours-purple-60);
+    --ds2-border-accent-magenta: var(--colours-magenta-60);
+
+    /* ICON — ACCENT */
+    --ds2-icon-accent-blue:    var(--colours-blue-70);
+    --ds2-icon-accent-lime:    var(--colours-lime-70);
+    --ds2-icon-accent-red:     var(--colours-red-60);
+    --ds2-icon-accent-yellow:  var(--colours-yellow-60);
+    --ds2-icon-accent-green:   var(--colours-green-70);
+    --ds2-icon-accent-teal:    var(--colours-teal-70);
+    --ds2-icon-accent-purple:  var(--colours-purple-60);
+    --ds2-icon-accent-magenta: var(--colours-magenta-60);
+    --ds2-icon-accent-orange:  var(--colours-orange-60);
+
+    /* TEXT — ACCENT */
+    --ds2-text-accent-blue:    var(--colours-blue-70);
+    --ds2-text-accent-lime:   var(--colours-lime-70);
+    --ds2-text-accent-red:    var(--colours-red-70);
+    --ds2-text-accent-yellow: var(--colours-yellow-50);
+    --ds2-text-accent-green:  var(--colours-green-70);
+    --ds2-text-accent-teal:   var(--colours-teal-70);
+    --ds2-text-accent-purple: var(--colours-purple-60);
+    --ds2-text-accent-magenta: var(--colours-magenta-70);
+    --ds2-text-accent-orange: var(--colours-orange-70);
+  }
+  
+  
+  /* --------------------------------------------------------------------------
+     SEMANTIC TOKENS — DARK MODE (.dark or [data-mode="dark"])
+     Swap semantic tokens to dark primitives. Primitives stay unchanged.
+     -------------------------------------------------------------------------- */
+  .dark,
+  [data-mode="dark"] {
+  
+    /* BACKGROUND — NEUTRAL */
+    --ds2-background-neutral:                var(--colours-alpha-dark-20);
+    --ds2-background-neutral-hover:          var(--colours-alpha-dark-30);
+    --ds2-background-neutral-pressed:        var(--colours-alpha-dark-40);
+    --ds2-background-neutral-subtle:         var(--colours-alpha-dark-10);
+    --ds2-background-neutral-subtle-hover:   var(--colours-alpha-dark-20);
+    --ds2-background-neutral-subtle-pressed: var(--colours-alpha-dark-30);
+    --ds2-background-neutral-bold:           var(--colours-neutral-dark-60);
+    --ds2-background-neutral-bold-hover:     var(--colours-neutral-dark-70);
+    --ds2-background-neutral-bold-pressed:   var(--colours-neutral-dark-80);
+  
+    /* BACKGROUND — INPUT */
+    --ds2-background-input:         var(--colours-neutral-dark-20);
+    --ds2-background-input-hover:   var(--colours-neutral-dark-25);
+    --ds2-background-input-pressed: var(--colours-neutral-dark-20);
+  
+    /* BACKGROUND — DISABLED */
+    --ds2-background-disabled: var(--colours-alpha-dark-10);
+  
+    /* BACKGROUND — SELECTED */
+    --ds2-background-selected:              var(--colours-blue-90);
+    --ds2-background-selected-hover:        var(--colours-blue-80);
+    --ds2-background-selected-pressed:      var(--colours-blue-70);
+    --ds2-background-selected-bold:         var(--colours-blue-50);
+    --ds2-background-selected-bold-hover:   var(--colours-blue-60);
+    --ds2-background-selected-bold-pressed: var(--colours-blue-30);
+  
+    /* BACKGROUND — DANGER */
+    --ds2-background-danger:              var(--colours-red-90);
+    --ds2-background-danger-hover:        var(--colours-red-80);
+    --ds2-background-danger-pressed:      var(--colours-red-70);
+    --ds2-background-danger-bold:         var(--colours-red-60);
+    --ds2-background-danger-bold-hover:   var(--colours-red-40);
+    --ds2-background-danger-bold-pressed: var(--colours-red-30);
+  
+    /* BACKGROUND — WARNING */
+    --ds2-background-warning:              var(--colours-yellow-90);
+    --ds2-background-warning-hover:        var(--colours-yellow-80);
+    --ds2-background-warning-pressed:      var(--colours-yellow-60);
+    --ds2-background-warning-bold:         var(--colours-yellow-40);
+    --ds2-background-warning-bold-hover:   var(--colours-yellow-30);
+    --ds2-background-warning-bold-pressed: var(--colours-yellow-20);
+  
+    /* BACKGROUND — SUCCESS */
+    --ds2-background-success:              var(--colours-green-90);
+    --ds2-background-success-hover:        var(--colours-green-80);
+    --ds2-background-success-pressed:      var(--colours-green-70);
+    --ds2-background-success-bold:         var(--colours-green-60);
+    --ds2-background-success-bold-hover:   var(--colours-green-50);
+    --ds2-background-success-bold-pressed: var(--colours-green-40);
+  
+    /* BACKGROUND — DISCOVERY */
+    --ds2-background-discovery:              var(--colours-purple-90);
+    --ds2-background-discovery-hover:        var(--colours-purple-80);
+    --ds2-background-discovery-pressed:      var(--colours-purple-70);
+    --ds2-background-discovery-bold:         var(--colours-purple-50);
+    --ds2-background-discovery-bold-hover:   var(--colours-purple-30);
+    --ds2-background-discovery-bold-pressed: var(--colours-purple-20);
+  
+    /* BACKGROUND — INFORMATION */
+    --ds2-background-information:              var(--colours-blue-90);
+    --ds2-background-information-hover:        var(--colours-blue-80);
+    --ds2-background-information-pressed:      var(--colours-blue-70);
+    --ds2-background-information-bold:         var(--colours-blue-50);
+    --ds2-background-information-bold-hover:   var(--colours-blue-60);
+    --ds2-background-information-bold-pressed: var(--colours-blue-30);
+  
+    /* BACKGROUND — BRAND */
+    --ds2-background-brand-subtlest: var(--colours-blue-90);
+    --ds2-background-brand-subtler:  var(--colours-blue-80);
+    --ds2-background-brand-subtle:   var(--colours-blue-70);
+    --ds2-background-brand-base:     var(--colours-blue-50);
+    --ds2-background-brand-bold:     var(--colours-blue-60);
+    --ds2-background-brand-bolder:   var(--colours-blue-30);
+    --ds2-background-brand-boldest:  var(--colours-blue-20);
+  
+    /* SKELETON */
+    --ds2-skeleton-base:   var(--colours-alpha-dark-20);
+    --ds2-skeleton-subtle: var(--colours-alpha-dark-10);
+  
+    /* BLANKET */
+    --ds2-blanket-default:  var(--colours-neutral-dark-10);
+    --ds2-blanket-selected: rgba(29, 122, 252, 0.08);
+  
+    /* ELEVATION */
+    --ds2-elevation-surface:              var(--colours-neutral-dark-10);
+    --ds2-elevation-surface-hovered:      var(--colours-neutral-dark-20);
+    --ds2-elevation-surface-pressed:      var(--colours-neutral-dark-25);
+    --ds2-elevation-surface-registration: var(--colours-neutral-dark-10);
+    --ds2-elevation-surface-sunken:       var(--colours-neutral-dark-0);
+    --ds2-elevation-overlay:              var(--colours-neutral-dark-25);
+    --ds2-elevation-overlay-hovered:      var(--colours-neutral-dark-30);
+    --ds2-elevation-overlay-pressed:      var(--colours-neutral-dark-30);
+    --ds2-elevation-raised:               var(--colours-neutral-dark-20);
+    --ds2-elevation-raised-hovered:       var(--colours-neutral-dark-25);
+    --ds2-elevation-raised-pressed:       var(--colours-neutral-dark-30);
+  
+    /* TEXT */
+    --ds2-text-default:      var(--colours-neutral-dark-90);
+    --ds2-text-subtle:       var(--colours-neutral-dark-80);
+    --ds2-text-title:        var(--colours-neutral-dark-110);
+    --ds2-text-caption:      var(--colours-neutral-dark-70);
+    --ds2-text-inverted:     var(--colours-neutral-dark-10);
+    --ds2-text-disabled:     var(--colours-alpha-dark-40);
+    --ds2-text-selected:     var(--colours-blue-40);
+    --ds2-text-brand:        var(--colours-blue-40);
+    --ds2-text-danger:       var(--colours-red-30);
+    --ds2-text-warning:      var(--colours-yellow-30);
+    --ds2-text-success:      var(--colours-green-30);
+    --ds2-text-discovery:    var(--colours-purple-30);
+    --ds2-text-information:  var(--colours-blue-30);
+    --ds2-text-link-default: var(--colours-blue-40);
+    --ds2-text-link-pressed: var(--colours-blue-30);
+    --ds2-text-link-visited: var(--colours-purple-30);
+  
+    /* ICON */
+    --ds2-icon-default:     var(--colours-neutral-dark-80);
+    --ds2-icon-subtle:      var(--colours-neutral-dark-70);
+    --ds2-icon-inverted:    var(--colours-neutral-dark-10);
+    --ds2-icon-disabled:    var(--colours-alpha-dark-40);
+    --ds2-icon-selected:    var(--colours-blue-40);
+    --ds2-icon-brand:       var(--colours-blue-40);
+    --ds2-icon-danger:      var(--colours-red-50);
+    --ds2-icon-warning:     var(--colours-yellow-50);
+    --ds2-icon-success:     var(--colours-green-50);
+    --ds2-icon-discovery:   var(--colours-purple-50);
+    --ds2-icon-information: var(--colours-blue-50);
+  
+    /* BORDER */
+    --ds2-border-default:     var(--colours-alpha-dark-30);
+    --ds2-border-subtle:      var(--colours-alpha-dark-20);
+    --ds2-border-bold:        var(--colours-neutral-dark-60);
+    --ds2-border-disabled:    var(--colours-alpha-dark-20);
+    --ds2-border-focused:     var(--colours-blue-60);
+    --ds2-border-selected:    var(--colours-blue-40);
+    --ds2-border-input:       var(--colours-alpha-dark-40);
+    --ds2-border-brand:       var(--colours-blue-40);
+    --ds2-border-danger:      var(--colours-red-50);
+    --ds2-border-warning:     var(--colours-yellow-50);
+    --ds2-border-success:     var(--colours-green-50);
+    --ds2-border-discovery:   var(--colours-purple-50);
+    --ds2-border-information: var(--colours-blue-50);
+  
+    /* CHART */
+    --ds2-chart-brand:              var(--colours-blue-40);
+    --ds2-chart-brand-hover:        var(--colours-blue-30);
+    --ds2-chart-category-1:         var(--colours-blue-60);
+    --ds2-chart-category-1-hover:   var(--colours-blue-40);
+    --ds2-chart-category-1-pressed: var(--colours-blue-20);
+    --ds2-chart-category-2:         var(--colours-teal-60);
+    --ds2-chart-category-2-hover:   var(--colours-teal-40);
+    --ds2-chart-category-2-pressed: var(--colours-teal-20);
+    --ds2-chart-category-3:         var(--colours-magenta-60);
+    --ds2-chart-category-3-hover:   var(--colours-magenta-40);
+    --ds2-chart-category-3-pressed: var(--colours-magenta-20);
+    --ds2-chart-category-4:         var(--colours-purple-60);
+    --ds2-chart-category-4-hover:   var(--colours-purple-40);
+    --ds2-chart-category-4-pressed: var(--colours-purple-20);
+    --ds2-chart-category-5:         var(--colours-orange-60);
+    --ds2-chart-category-5-hover:   var(--colours-orange-40);
+    --ds2-chart-category-5-pressed: var(--colours-orange-20);
+    --ds2-chart-success:            var(--colours-green-50);
+    --ds2-chart-success-hover:      var(--colours-green-40);
+    --ds2-chart-warning:            var(--colours-yellow-50);
+    --ds2-chart-warning-hover:      var(--colours-yellow-40);
+    --ds2-chart-danger:             var(--colours-red-60);
+    --ds2-chart-danger-hover:       var(--colours-red-40);
+    --ds2-chart-discovery:          var(--colours-purple-50);
+    --ds2-chart-discovery-hover:    var(--colours-purple-40);
+    --ds2-chart-information:        var(--colours-blue-50);
+    --ds2-chart-information-hover:  var(--colours-blue-40);
+  }
