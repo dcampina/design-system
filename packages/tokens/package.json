@@ -1,0 +1,13 @@
+{
+  "name": "@indigo/tokens",
+  "version": "0.0.1",
+  "description": "Design tokens for Indigo design system",
+  "type": "module",
+  "main": "./dist/index.css",
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind": "./src/tailwind.preset.ts"
+  },
+  "files": ["dist", "src/tailwind.preset.ts"],
+  "license": "MIT"
+}
