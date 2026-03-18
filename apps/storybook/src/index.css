@@ -1,2 +1,5 @@
-@import '../../../packages/tokens/src/tokens.css';
-@import "tailwindcss";
+@import "@indigo/tokens/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
