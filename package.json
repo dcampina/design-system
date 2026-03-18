@@ -7,19 +7,23 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "install:storybook": "cd apps/storybook && npm install --legacy-peer-deps",
-    "storybook": "cd apps/storybook && npm run storybook"
+    "storybook": "npm run storybook -w storybook"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
     "turbo": "^2.8.17",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=18"
   },
   "packageManager": "npm@11.11.0",
   "workspaces": [
-    "packages/*"
-  ]
+    "packages/*",
+    "apps/*"
+  ],
+  "overrides": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^3.4.17"
+  }
 }

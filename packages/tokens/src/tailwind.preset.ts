@@ -445,7 +445,7 @@ const indigoPreset: Omit<Config, 'content'> = {
         },
     },
     plugins: [
-        plugin(function ({ addComponents }) {
+        plugin(function ({ addComponents }: { addComponents: (components: Record<string, unknown>) => void }) {
             addComponents({
                 /* Display */
                 '.ds2-display-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '57px', lineHeight: '68px', fontWeight: '700' },
