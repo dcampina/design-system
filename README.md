@@ -1,159 +1,136 @@
-# Turborepo starter
+# Indigo Design System (Beta)
 
-This Turborepo starter is maintained by the Turborepo core team.
+> ⚠️ This is a beta version. APIs and token structures may change. Breaking changes will be documented.
 
-## Using this example
+Indigo is the design system powering news aktuell's web products. It provides a shared token system and component library to ensure visual consistency across all applications.
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
+## Packages
+
+| Package | Description |
+|---|---|
+| `@dcampina/indigo-tokens` | Design tokens — colors, spacing, typography, shadows |
+| `@dcampina/indigo-components` | React component library built on shadcn/ui |
+| `@repo/eslint-config` | Shared ESLint configurations |
+| `@repo/typescript-config` | Shared TypeScript configurations |
+
+## Apps
+
+| App | Description |
+|---|---|
+| `apps/storybook` | Component explorer and documentation |
+| `packages/next-app` | Reference Next.js implementation |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js `>=22`
+- npm `>=10`
+
+### Install
+
+```bash
+git clone https://github.com/dcampina/design-system.git
+cd design-system
+npm install
 ```
 
-## What's inside?
+### Run Storybook
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@dcampina/indigo-components`: a React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+```bash
+npm run storybook
 ```
 
-Without global `turbo`, use your package manager:
+### Build all packages
 
-```sh
-cd my-turborepo
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```bash
+npm run build
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### Run tests
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo build --filter=docs
+```bash
+npm run test
 ```
 
-Without global `turbo`:
+### Lint
 
-```sh
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```bash
+npm run lint
 ```
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## Figma
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+| File | Link |
+|---|---|
+| Tokens | [FIGMA_TOKENS_URL] |
+| Components | [FIGMA_COMPONENTS_URL] |
 
-```sh
-cd my-turborepo
-turbo dev
+---
+
+## Architecture
+
+### Monorepo
+
+This repo uses [Turborepo](https://turbo.build/) for task orchestration and caching. Packages are managed with npm workspaces.
+
+### Token System
+
+Tokens are defined in `packages/tokens` and follow an Atlassian-style semantic token system. Tokens are split by usage context — for example `bg-ds2-success` and `border-ds2-success` intentionally reference different color values, as background and border success states are visually distinct.
+
+Tokens are defined at two levels:
+
+- **Primitive tokens** — raw values (`--ds-indigo-500: #6366f1`)
+- **Semantic tokens** — contextual meaning (`--ds2-bg-success`, `--ds2-border-success`)
+
+Semantic tokens also include interaction modifiers:
+
+```css
+--ds2-bg-brand-base
+--ds2-bg-brand-hover
+--ds2-bg-brand-pressed
 ```
 
-Without global `turbo`, use your package manager:
+### Why Tailwind 3
 
-```sh
-cd my-turborepo
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+The token system requires defining colors separately per property context (e.g. `backgroundColor` and `borderColor` can reference different values for the same semantic name). Tailwind 4's CSS-first architecture removes this capability, so **this project requires Tailwind CSS v3** and must not be upgraded to v4.
+
+### Components
+
+Components in `packages/components` are built on [shadcn/ui](https://ui.shadcn.com/) and styled exclusively with Indigo tokens. shadcn provides structure and accessibility; Indigo tokens provide the visual layer.
+
+---
+
+## Repo Structure
+
+```
+design-system/
+├── apps/
+│   └── storybook/          # Storybook app
+├── packages/
+│   ├── components/         # React component library
+│   ├── tokens/             # Design tokens + Tailwind preset
+│   ├── next-app/           # Reference Next.js application
+│   ├── eslint-config/      # Shared ESLint config
+│   └── typescript-config/  # Shared TypeScript config
+├── turbo.json
+└── package.json
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## Contributing
 
-```sh
-turbo dev --filter=web
-```
+See the [Contributing Guide](./CONTRIBUTING.md) for how to add components, tokens, and tests.
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+## License
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+Private — news aktuell internal use only.
