@@ -2,12 +2,12 @@ import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin.js';
 
 /**
- * @indigo/tokens — Tailwind Preset
+ * @dcampina/indigo-tokens — Tailwind Preset
  *
  * Consumes DS2 CSS custom properties defined in tokens.css.
  * Import this preset in any project's tailwind.config.ts:
  *
- *   import indigoPreset from '@indigo/tokens/tailwind';
+ *   import indigoPreset from '@dcampina/indigo-tokens/tailwind';
  *   export default { presets: [indigoPreset] } satisfies Config;
  */
 const indigoPreset: Omit<Config, 'content'> = {

@@ -1,5 +1,5 @@
 {
-  "name": "@indigo/tokens",
+  "name": "@dcampina/indigo-tokens",
   "version": "0.0.1",
   "description": "Design tokens (CSS variables and Tailwind preset) for Indigo design system",
   "type": "module",

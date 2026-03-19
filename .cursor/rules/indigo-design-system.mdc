@@ -1,14 +1,14 @@
 # Cursor Rules — Indigo Design System
 
 ## Monorepo Structure
-- `packages/tokens` → @indigo/tokens (CSS variables + Tailwind preset)
-- `packages/components` → @indigo/components (React component library) — ensure package.json `"name"` is `"@indigo/components"`
+- `packages/tokens` → @dcampina/indigo-tokens (CSS variables + Tailwind preset)
+- `packages/components` → @dcampina/indigo-components (React component library) — ensure package.json `"name"` is `"@dcampina/indigo-components"`
 - `apps/storybook` → dev environment only, never published
 
 ## Stack
 - React 18+, TypeScript, strict mode
-- Tailwind CSS v4 with @indigo/tokens preset
-- In apps (e.g. Storybook), Tailwind v4 uses `@import "tailwindcss"` in CSS; use the @indigo/tokens preset where token utilities are needed
+- Tailwind CSS v4 with @dcampina/indigo-tokens preset
+- In apps (e.g. Storybook), Tailwind v4 uses `@import "tailwindcss"` in CSS; use the @dcampina/indigo-tokens preset where token utilities are needed
 - shadcn/ui with Base UI primitives
 - Storybook 10 with Vite builder
 

@@ -1,4 +1,4 @@
-import indigoPreset from '@indigo/tokens/tailwind';
+import indigoPreset from '@dcampina/indigo-tokens/tailwind';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 

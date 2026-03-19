@@ -14,8 +14,8 @@
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "@indigo/components": "file:../../packages/components",
-    "@indigo/tokens": "file:../../packages/tokens"
+    "@dcampina/indigo-components": "file:../../packages/components",
+    "@dcampina/indigo-tokens": "file:../../packages/tokens"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
