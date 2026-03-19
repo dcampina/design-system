@@ -1,25 +1,53 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { dirname, join, resolve } from "path";
+import { fileURLToPath } from "url";
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+import tailwindConfig from '../tailwind.config.js';
 
-import { dirname } from "path"
-
-import { fileURLToPath } from "url"
-
-/**
-* This function is used to resolve the absolute path of a package.
-* It is needed in projects that use Yarn PnP or are set up within a monorepo.
-*/
 function getAbsolutePath(value: string) {
-  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
 }
+
 const config: StorybookConfig = {
-  "stories": [
-    // MDX excluded: addon-docs was removed (hoisting), so MDX isn’t compiled and would break the build
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  stories: [
+    {
+      directory: '../../../packages/components/src/components/ui',
+      files: '**/*.stories.@(js|jsx|mjs|ts|tsx)',
+      titlePrefix: 'Components',
+    }
   ],
-  "addons": [
-    // addon-vitest and addon-docs removed: monorepo hoisting breaks their require('storybook/internal/node-logger')
-    getAbsolutePath('@storybook/addon-a11y')
+  addons: [
+    getAbsolutePath('@storybook/addon-a11y'),
   ],
-  "framework": getAbsolutePath('@storybook/react-vite')
+  framework: getAbsolutePath('@storybook/react-vite'),
+  async viteFinal(config) {
+    const __dirname = dirname(fileURLToPath(import.meta.url));
+    const projectRoot = join(__dirname, '../../..');
+
+    config.server = config.server ?? {};
+    config.server.fs = {
+      allow: [projectRoot],
+      strict: false,
+    };
+
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': resolve(__dirname, '../../../packages/components/src'),
+    };
+
+    config.css = {
+      postcss: {
+        plugins: [
+          tailwindcss(tailwindConfig),
+          autoprefixer(),
+        ]
+      }
+    };
+
+    return config;
+  },
 };
+
 export default config;
