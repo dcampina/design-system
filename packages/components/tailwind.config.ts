@@ -1,13 +1,9 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import preset from "@dcampina/indigo-tokens/tailwind";
 
-const config: Config = {
-  content: [
-    "./src/**/*.{ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+const config = {
+  presets: [preset],
+  content: ["./src/**/*.{ts,tsx}"],
+} satisfies Config;
 
-export default config
+export default config;

@@ -21,6 +21,7 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@dcampina/indigo-tokens": "file:../tokens",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@testing-library/jest-dom": "^6.9.1",
