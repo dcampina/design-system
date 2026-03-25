@@ -23,7 +23,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17",

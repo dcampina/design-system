@@ -8,11 +8,11 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "outline", "secondary", "ghost", "destructive", "link"],
+      options: ["primary", "secondary", "tertiary", "destructive", "link"],
     },
     size: {
       control: "select",
-      options: ["default", "xs", "sm", "lg", "icon", "icon-xs", "icon-sm", "icon-lg"],
+      options: ["xs", "sm", "md", "lg", "xl", "icon", "icon-xs", "icon-sm", "icon-lg"],
     },
   },
 }
@@ -20,37 +20,32 @@ const meta: Meta<typeof Button> = {
 export default meta
 type Story = StoryObj<typeof Button>
 
-export const Default: Story = {
-  args: { children: "Button", variant: "default", size: "default" },
-}
-
-export const Outline: Story = {
-  args: { children: "Button", variant: "outline", size: "default" },
+export const Primary: Story = {
+  args: { children: "Button", variant: "primary", size: "md" },
 }
 
 export const Secondary: Story = {
-  args: { children: "Button", variant: "secondary", size: "default" },
+  args: { children: "Button", variant: "secondary", size: "md" },
 }
 
-export const Ghost: Story = {
-  args: { children: "Button", variant: "ghost", size: "default" },
+export const Tertiary: Story = {
+  args: { children: "Button", variant: "tertiary", size: "md" },
 }
 
 export const Destructive: Story = {
-  args: { children: "Button", variant: "destructive", size: "default" },
+  args: { children: "Button", variant: "destructive", size: "md" },
 }
 
 export const Link: Story = {
-  args: { children: "Button", variant: "link", size: "default" },
+  args: { children: "Button", variant: "link", size: "md" },
 }
 
 export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-3">
-      <Button variant="default">Default</Button>
-      <Button variant="outline">Outline</Button>
+      <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
+      <Button variant="tertiary">Tertiary</Button>
       <Button variant="destructive">Destructive</Button>
       <Button variant="link">Link</Button>
     </div>
@@ -60,10 +55,11 @@ export const AllVariants: Story = {
 export const AllSizes: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button size="xs">Extra Small</Button>
+      <Button size="xs">Extra small</Button>
       <Button size="sm">Small</Button>
-      <Button size="default">Default</Button>
+      <Button size="md">Medium</Button>
       <Button size="lg">Large</Button>
+      <Button size="xl">Extra large</Button>
     </div>
   ),
 }

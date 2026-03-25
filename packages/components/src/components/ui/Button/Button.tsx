@@ -4,27 +4,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-ds2-m border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-  {
+"group/button inline-flex shrink-0 items-center justify-center ds2-button rounded-ds2-m border border-transparent bg-clip-padding whitespace-nowrap transition-all outline-none select-none focus-visible:border-ds2-focused focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:bg-ds2-disabled [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",  
+{
     variants: {
       variant: {
-        default: "bg-ds2-brand-base  border-ds2-accent-yellow ds2-button text-ds2-inverted [a]:hover:bg-ds2-brand-bold",
-        outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+        primary: 
+        "bg-ds2-brand-base text-ds2-inverted hover:bg-ds2-brand-bold active:bg-ds2-brand-bolder aria-expanded:bg-ds2-brand-bold",
         secondary:
-          "bg-ds2-neutral text-ds2-default hover:bg-ds2-neutral-hover aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
-        ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "bg-ds2-neutral text-ds2-default hover:bg-ds2-neutral-hover active:bg-ds2-neutral-pressed aria-expanded:bg-ds2-selected",
+          tertiary:
+          "bg-ds2-neutral-subtle text-ds2-default hover:bg-ds2-neutral-subtle-hover active:bg-ds2-neutral-subtle-pressed aria-expanded:bg-ds2-selected",
         destructive:
-          "bg-ds2-danger-bold text-ds2-inverted hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-ds2-danger-bold text-ds2-inverted hover:bg-ds2-danger-bold-hover active:bg-ds2-danger-bold-pressed aria-expanded:bg-ds2-danger-bold-hover",
+        link: "text-ds2-link hover:text-ds2-link-pressed underline-offset-4 hover:underline",
       },
       size: {
-        default:
-          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
+        xl: "min-h-12 px-ds2-m has-data-[icon]:gap-ds2-xs",
+        lg: "min-h-10 px-ds2-s has-data-[icon]:gap-ds2-xs",
+        md: "min-h-8 px-ds2-s has-data-[icon]:gap-ds2-xxs",
+        sm: "min-h-7 px-ds2-s has-data-[icon]:gap-ds2-xxs",
+        xs: "min-h-6 px-ds2-s has-data-[icon]:gap-ds2-xxs",
         icon: "size-8",
         "icon-xs":
           "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
@@ -34,16 +33,16 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
+      size: "md",
     },
   }
 )
 
 function Button({
   className,
-  variant = "default",
-  size = "default",
+  variant = "primary",
+  size = "md",
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
   return (
