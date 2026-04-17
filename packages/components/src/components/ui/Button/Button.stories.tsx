@@ -106,7 +106,7 @@ export const IconOnlyPlayground: StoryObj<IconOnlyPlaygroundArgs> = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-ds2-s">
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="tertiary">Tertiary</Button>
@@ -118,10 +118,10 @@ export const AllVariants: Story = {
 
 export const AllSizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-ds2-m">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Text only</p>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-ds2-s">
           <Button size="xs">Extra small</Button>
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
@@ -130,9 +130,9 @@ export const AllSizes: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">With leading icon</p>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-ds2-s">
           <Button size="xs">
             <PlusIcon data-icon aria-hidden />
             Add
@@ -156,9 +156,9 @@ export const AllSizes: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">With trailing icon</p>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-ds2-s">
           <Button size="xs">
             Next
             <ChevronRight data-icon aria-hidden />
@@ -187,10 +187,10 @@ export const AllSizes: Story = {
 
 export const LeadingAndTrailingIcons: Story = {
   render: () => (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-ds2-m">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Leading icon</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="primary">
             <PlusIcon data-icon aria-hidden />
             Create
@@ -206,9 +206,9 @@ export const LeadingAndTrailingIcons: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Trailing icon</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="primary">
             Continue
             <ChevronRight data-icon aria-hidden />
@@ -224,9 +224,9 @@ export const LeadingAndTrailingIcons: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Leading and trailing</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="primary">
             <PlusIcon data-icon aria-hidden />
             Save and continue
@@ -250,8 +250,8 @@ export const LeadingAndTrailingIcons: Story = {
 
 export const AllIconSizes: Story = {
   render: () => (
-    <div className="flex flex-wrap items-end gap-8">
-      <figure className="flex flex-col items-center gap-2">
+    <div className="flex flex-wrap items-end gap-ds2-l">
+      <figure className="flex flex-col items-center gap-ds2-xs">
         <Button size="icon-xs" aria-label="Add (icon-xs)">
           <PlusIcon aria-hidden />
         </Button>
@@ -262,7 +262,7 @@ export const AllIconSizes: Story = {
         </figcaption>
       </figure>
 
-      <figure className="flex flex-col items-center gap-2">
+      <figure className="flex flex-col items-center gap-ds2-xs">
         <Button size="icon-sm" aria-label="Add (icon-sm)">
           <PlusIcon aria-hidden />
         </Button>
@@ -273,7 +273,7 @@ export const AllIconSizes: Story = {
         </figcaption>
       </figure>
 
-      <figure className="flex flex-col items-center gap-2">
+      <figure className="flex flex-col items-center gap-ds2-xs">
         <Button size="icon-md" aria-label="Add (icon-md)">
           <PlusIcon aria-hidden />
         </Button>
@@ -284,7 +284,7 @@ export const AllIconSizes: Story = {
         </figcaption>
       </figure>
 
-      <figure className="flex flex-col items-center gap-2">
+      <figure className="flex flex-col items-center gap-ds2-xs">
         <Button size="icon-lg" aria-label="Add (icon-lg)">
           <PlusIcon aria-hidden />
         </Button>
@@ -295,7 +295,7 @@ export const AllIconSizes: Story = {
         </figcaption>
       </figure>
 
-      <figure className="flex flex-col items-center gap-2">
+      <figure className="flex flex-col items-center gap-ds2-xs">
         <Button size="icon-xl" aria-label="Add (icon-xl)">
           <PlusIcon aria-hidden />
         </Button>
@@ -311,10 +311,10 @@ export const AllIconSizes: Story = {
 
 export const States: Story = {
   render: () => (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-ds2-m">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Primary</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="primary">Default</Button>
           <Button variant="primary" disabled>
             Disabled
@@ -328,9 +328,9 @@ export const States: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Secondary</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="secondary">Default</Button>
           <Button variant="secondary" disabled>
             Disabled
@@ -344,9 +344,9 @@ export const States: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Tertiary</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="tertiary">Default</Button>
           <Button variant="tertiary" disabled>
             Disabled
@@ -360,9 +360,9 @@ export const States: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Destructive</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="destructive">Default</Button>
           <Button variant="destructive" disabled>
             Disabled
@@ -376,9 +376,9 @@ export const States: Story = {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-ds2-s">
         <p className="ds2-body-md text-ds2-subtle">Link</p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-ds2-s">
           <Button variant="link">Default</Button>
           <Button variant="link" disabled>
             Disabled

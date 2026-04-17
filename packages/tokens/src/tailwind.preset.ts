@@ -357,6 +357,35 @@ const indigoPreset: Omit<Config, 'content'> = {
                 'ds2-accent-purple': 'var(--ds2-border-accent-purple)',
                 'ds2-accent-magenta': 'var(--ds2-border-accent-magenta)',
             },
+            /** Ring color aliases — same CSS vars as `borderColor` for consistent focus rings and outlines. */
+            ringColor: {
+                'ds2-default': 'var(--ds2-border-default, #091e421f)',
+                'ds2-subtle': 'var(--ds2-border-subtle, #091e420f)',
+                'ds2-bold': 'var(--ds2-border-bold, #44546f)',
+                'ds2-disabled': 'var(--ds2-border-disabled, #091e420f)',
+                'ds2-input': 'var(--ds2-border-input, #091e424f)',
+                'ds2-focused': 'var(--ds2-border-focused, #1d7afc)',
+                'ds2-selected': 'var(--ds2-border-selected, #1856f5)',
+                'ds2-brand': 'var(--ds2-border-brand, #1856f5)',
+
+                /* STATUS */
+                'ds2-danger': 'var(--ds2-border-danger, #e34935)',
+                'ds2-warning': 'var(--ds2-border-warning, #f5cd47)',
+                'ds2-success': 'var(--ds2-border-success, #22a06b)',
+                'ds2-discovery': 'var(--ds2-border-discovery, #8270db)',
+                'ds2-information': 'var(--ds2-border-information, #388bff)',
+
+                /* ACCENT */
+                'ds2-accent-blue': 'var(--ds2-border-accent-blue)',
+                'ds2-accent-red': 'var(--ds2-border-accent-red)',
+                'ds2-accent-orange': 'var(--ds2-border-accent-orange)',
+                'ds2-accent-yellow': 'var(--ds2-border-accent-yellow)',
+                'ds2-accent-lime': 'var(--ds2-border-accent-lime)',
+                'ds2-accent-green': 'var(--ds2-border-accent-green)',
+                'ds2-accent-teal': 'var(--ds2-border-accent-teal)',
+                'ds2-accent-purple': 'var(--ds2-border-accent-purple)',
+                'ds2-accent-magenta': 'var(--ds2-border-accent-magenta)',
+            },
             borderRadius: {
                 'ds2-none': 'var(--floats-none, 0px)',
                 'ds2-s': 'var(--floats-20, 2px)',
@@ -365,6 +394,13 @@ const indigoPreset: Omit<Config, 'content'> = {
                 'ds2-full': 'var(--floats-circular, 9999px)',
             },
             borderWidth: {
+                'ds2-none': 'var(--floats-none, 0px)',
+                'ds2-s': 'var(--floats-10, 1px)',
+                'ds2-m': 'var(--floats-20, 2px)',
+                'ds2-l': 'var(--floats-30, 3px)',
+            },
+            /** Ring width — same floats as `borderWidth` for focus rings (e.g. `ring-ds2-l` ≈ 3px). */
+            ringWidth: {
                 'ds2-none': 'var(--floats-none, 0px)',
                 'ds2-s': 'var(--floats-10, 1px)',
                 'ds2-m': 'var(--floats-20, 2px)',
@@ -422,7 +458,9 @@ const indigoPreset: Omit<Config, 'content'> = {
                 'ds2-disabled': 'var(--ds2-text-disabled, #091e4266)',
                 'ds2-selected': 'var(--ds2-text-selected, #1856f5)',
                 'ds2-brand': 'var(--ds2-text-brand, #1856f5)',
-                'ds2-link': 'var(--ds2-text-brand, #1856f5)',
+                'ds2-link': 'var(--ds2-text-link, #1856f5)',
+                'ds2-link-pressed': 'var(--ds2-text-link-pressed, #004ab1)',
+                'ds2-link-visited': 'var(--ds2-text-link-visited, #8270db)',
 
                 /* Status */
                 'ds2-danger': 'var(--ds2-text-danger, #c9372c)',

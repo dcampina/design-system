@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center ds2-button rounded-ds2-m border border-transparent bg-clip-padding whitespace-nowrap transition-all outline-none select-none focus-visible:border-ds2-focused focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:bg-ds2-disabled disabled:text-ds2-disabled [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center ds2-button rounded-ds2-m border border-transparent bg-clip-padding whitespace-nowrap transition-all outline-none select-none focus-visible:border-ds2-focused focus-visible:ring-ds2-l focus-visible:ring-ds2-focused/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:bg-ds2-disabled disabled:text-ds2-disabled [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-ds2-s",
   {
     variants: {
       variant: {
@@ -20,18 +20,18 @@ const buttonVariants = cva(
       },
       size: {
         // Regular buttons
-        xl: "min-h-12 px-ds2-m has-data-[icon]:gap-ds2-xs",
+        xl: "min-h-ds2-xl px-ds2-m has-data-[icon]:gap-ds2-xs",
         lg: "min-h-10 px-ds2-s has-data-[icon]:gap-ds2-xs",
-        md: "min-h-8 px-ds2-s has-data-[icon]:gap-ds2-xxs",
+        md: "min-h-ds2-l px-ds2-s has-data-[icon]:gap-ds2-xxs",
         sm: "min-h-7 px-ds2-s has-data-[icon]:gap-ds2-xxs",
-        xs: "min-h-6 px-ds2-s has-data-[icon]:gap-ds2-xxs",
+        xs: "min-h-ds2-m px-ds2-s has-data-[icon]:gap-ds2-xxs",
 
         // Icon buttons
-        "icon-xl": "size-12 [&_svg:not([class*='size-'])]:size-6",
+        "icon-xl": "size-ds2-xl [&_svg:not([class*='size-'])]:size-ds2-m",
         "icon-lg": "size-10 [&_svg:not([class*='size-'])]:size-5",
-        "icon-md": "size-8 [&_svg:not([class*='size-'])]:size-4",
-        "icon-sm": "size-7 [&_svg:not([class*='size-'])]:size-4",
-        "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-4",
+        "icon-md": "size-ds2-l [&_svg:not([class*='size-'])]:size-ds2-s",
+        "icon-sm": "size-7 [&_svg:not([class*='size-'])]:size-ds2-s",
+        "icon-xs": "size-ds2-m [&_svg:not([class*='size-'])]:size-ds2-s",
       },
     },
     defaultVariants: {

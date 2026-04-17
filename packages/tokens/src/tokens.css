@@ -301,7 +301,7 @@
     --ds2-text-success:      var(--colours-green-70);
     --ds2-text-discovery:    var(--colours-purple-60);
     --ds2-text-information:  var(--colours-blue-60);
-    --ds2-text-link-default: var(--colours-blue-70);
+    --ds2-text-link: var(--colours-blue-70);
     --ds2-text-link-pressed: var(--colours-blue-80);
     --ds2-text-link-visited: var(--colours-purple-60);
   
@@ -579,7 +579,7 @@
     --ds2-text-success:      var(--colours-green-30);
     --ds2-text-discovery:    var(--colours-purple-30);
     --ds2-text-information:  var(--colours-blue-30);
-    --ds2-text-link-default: var(--colours-blue-40);
+    --ds2-text-link: var(--colours-blue-40);
     --ds2-text-link-pressed: var(--colours-blue-30);
     --ds2-text-link-visited: var(--colours-purple-30);
   
