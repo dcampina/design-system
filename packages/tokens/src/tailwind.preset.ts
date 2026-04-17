@@ -441,13 +441,13 @@ const indigoPreset: Omit<Config, 'content'> = {
             },
             spacing: {
                 'ds2-none': 'var(--floats-none, 0px)',
-                'ds2-xxs': 'var(--floats-40, 4px)',
+                'ds2-2xs': 'var(--floats-40, 4px)',
                 'ds2-xs': 'var(--floats-80, 8px)',
-                'ds2-s': 'var(--floats-160, 16px)',
-                'ds2-m': 'var(--floats-240, 24px)',
-                'ds2-l': 'var(--floats-320, 32px)',
+                'ds2-sm': 'var(--floats-160, 16px)',
+                'ds2-md': 'var(--floats-240, 24px)',
+                'ds2-lg': 'var(--floats-320, 32px)',
                 'ds2-xl': 'var(--floats-480, 48px)',
-                'ds2-xxl': 'var(--floats-640, 64px)',
+                'ds2-2xl': 'var(--floats-640, 64px)',
             },
             textColor: {
                 'ds2-default': 'var(--ds2-text-default, #172b4d)',
@@ -486,34 +486,34 @@ const indigoPreset: Omit<Config, 'content'> = {
         plugin(function ({ addComponents }) {
             addComponents({
                 /* Display */
-                '.ds2-display-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '57px', lineHeight: '68px', fontWeight: '700' },
-                '.ds2-display-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '45px', lineHeight: '54px', fontWeight: '700' },
-                '.ds2-display-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '36px', lineHeight: '43px', fontWeight: '600' },
+                '.font-ds2-display-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '57px', lineHeight: '68px', fontWeight: '700' },
+                '.font-ds2-display-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '45px', lineHeight: '54px', fontWeight: '700' },
+                '.font-ds2-display-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '36px', lineHeight: '43px', fontWeight: '600' },
 
                 /* Headline */
-                '.ds2-headline-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '32px', lineHeight: '33px', fontWeight: '600' },
-                '.ds2-headline-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '28px', lineHeight: '30px', fontWeight: '600' },
-                '.ds2-headline-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '24px', lineHeight: '24px', fontWeight: '600' },
+                '.font-ds2-headline-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '32px', lineHeight: '33px', fontWeight: '600' },
+                '.font-ds2-headline-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '28px', lineHeight: '30px', fontWeight: '600' },
+                '.font-ds2-headline-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '24px', lineHeight: '24px', fontWeight: '600' },
 
                 /* Title */
-                '.ds2-title-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '22px', lineHeight: '26px', fontWeight: '600' },
-                '.ds2-title-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '20px', lineHeight: '24px', fontWeight: '600' },
-                '.ds2-title-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '16px', lineHeight: '21px', fontWeight: '600' },
+                '.font-ds2-title-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '22px', lineHeight: '26px', fontWeight: '600' },
+                '.font-ds2-title-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '20px', lineHeight: '24px', fontWeight: '600' },
+                '.font-ds2-title-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '16px', lineHeight: '21px', fontWeight: '600' },
 
                 /* Body */
-                '.ds2-body-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '18px', lineHeight: '26px', fontWeight: '400' },
-                '.ds2-body-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '16px', lineHeight: '24px', fontWeight: '400' },
-                '.ds2-body-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400' },
+                '.font-ds2-body-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '18px', lineHeight: '26px', fontWeight: '400' },
+                '.font-ds2-body-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '16px', lineHeight: '24px', fontWeight: '400' },
+                '.font-ds2-body-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '21px', fontWeight: '400' },
 
                 /* Caption */
-                '.ds2-caption-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '20px', fontWeight: '500' },
-                '.ds2-caption-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '12px', lineHeight: '18px', fontWeight: '400' },
-                '.ds2-caption-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '11px', lineHeight: '16px', fontWeight: '400' },
+                '.font-ds2-caption-lg': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '20px', fontWeight: '500' },
+                '.font-ds2-caption-md': { fontFamily: 'Inter, ui-sans-serif', fontSize: '12px', lineHeight: '18px', fontWeight: '400' },
+                '.font-ds2-caption-sm': { fontFamily: 'Inter, ui-sans-serif', fontSize: '11px', lineHeight: '16px', fontWeight: '400' },
 
                 /* Utility */
-                '.ds2-button': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '16px', fontWeight: '600' },
-                '.ds2-tag': { fontFamily: 'Inter, ui-sans-serif', fontSize: '11px', lineHeight: '16px', fontWeight: '500' },
-                '.ds2-label': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', fontWeight: '600', textTransform: 'uppercase' },
+                '.font-ds2-button': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', lineHeight: '16px', fontWeight: '600' },
+                '.font-ds2-tag': { fontFamily: 'Inter, ui-sans-serif', fontSize: '11px', lineHeight: '16px', fontWeight: '500' },
+                '.font-ds2-label': { fontFamily: 'Inter, ui-sans-serif', fontSize: '14px', fontWeight: '600', textTransform: 'uppercase' },
             });
         }),
     ],
