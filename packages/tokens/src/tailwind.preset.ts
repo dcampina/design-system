@@ -21,22 +21,22 @@ export const ds3BackgroundColors = {
   /* NEUTRALS */
   'ds3-neutral': 'var(--ds3-background-neutral, #091e420f)',
   'ds3-neutral-hover': 'var(--ds3-background-neutral-hover, #091e4223)',
-  'ds3-neutral-pressed': 'var(--ds3-background-neutral-pressed, #091e424f)',
+  'ds3-neutral-active': 'var(--ds3-background-neutral-active, #091e424f)',
   'ds3-neutral-subtle': 'var(--ds3-background-neutral-subtle, #ffffff)',
   'ds3-neutral-subtle-hover':
     'var(--ds3-background-neutral-subtle-hover, #091e420f)',
-  'ds3-neutral-subtle-pressed':
-    'var(--ds3-background-neutral-subtle-pressed, #091e4223)',
+  'ds3-neutral-subtle-active':
+    'var(--ds3-background-neutral-subtle-active, #091e4223)',
   'ds3-neutral-bold': 'var(--ds3-background-neutral-bold, #44546f)',
   'ds3-neutral-bold-hover':
     'var(--ds3-background-neutral-bold-hover, #2c3e5d)',
-  'ds3-neutral-bold-pressed':
-    'var(--ds3-background-neutral-bold-pressed, #172b4d)',
+  'ds3-neutral-bold-active':
+    'var(--ds3-background-neutral-bold-active, #172b4d)',
 
   /* INPUT */
   'ds3-input': 'var(--ds3-background-input, #ffffff)',
   'ds3-input-hover': 'var(--ds3-background-input-hover, #f7f8f9)',
-  'ds3-input-pressed': 'var(--ds3-background-input-pressed, #ffffff)',
+  'ds3-input-active': 'var(--ds3-background-input-active, #ffffff)',
 
   /* DISABLED */
   'ds3-disabled': 'var(--ds3-background-disabled, #091e4207)',
@@ -44,62 +44,62 @@ export const ds3BackgroundColors = {
   /* SELECTED */
   'ds3-selected': 'var(--ds3-background-selected, #e9f2ff)',
   'ds3-selected-hover': 'var(--ds3-background-selected-hover, #cce0ff)',
-  'ds3-selected-pressed': 'var(--ds3-background-selected-pressed, #85b8ff)',
+  'ds3-selected-active': 'var(--ds3-background-selected-active, #85b8ff)',
   'ds3-selected-bold': 'var(--ds3-background-selected-bold, #1856f5)',
   'ds3-selected-bold-hover':
     'var(--ds3-background-selected-bold-hover, #004ab1)',
-  'ds3-selected-bold-pressed':
-    'var(--ds3-background-selected-bold-pressed, #09326c)',
+  'ds3-selected-bold-active':
+    'var(--ds3-background-selected-bold-active, #09326c)',
 
   /* DANGER */
   'ds3-danger': 'var(--ds3-background-danger, #ffeceb)',
   'ds3-danger-hover': 'var(--ds3-background-danger-hover, #ffd5d2)',
-  'ds3-danger-pressed': 'var(--ds3-background-danger-pressed, #fd9891)',
+  'ds3-danger-active': 'var(--ds3-background-danger-active, #fd9891)',
   'ds3-danger-bold': 'var(--ds3-background-danger-bold, #c9372c)',
   'ds3-danger-bold-hover': 'var(--ds3-background-danger-bold-hover, #ae2e24)',
-  'ds3-danger-bold-pressed':
-    'var(--ds3-background-danger-bold-pressed, #5d1f1a)',
+  'ds3-danger-bold-active':
+    'var(--ds3-background-danger-bold-active, #5d1f1a)',
 
   /* WARNING */
   'ds3-warning': 'var(--ds3-background-warning, #fff7d6)',
   'ds3-warning-hover': 'var(--ds3-background-warning-hover, #f8e6a0)',
-  'ds3-warning-pressed': 'var(--ds3-background-warning-pressed, #f5cd47)',
+  'ds3-warning-active': 'var(--ds3-background-warning-active, #f5cd47)',
   'ds3-warning-bold': 'var(--ds3-background-warning-bold, #e2b203)',
   'ds3-warning-bold-hover':
     'var(--ds3-background-warning-bold-hover, #cf9f02)',
-  'ds3-warning-bold-pressed':
-    'var(--ds3-background-warning-bold-pressed, #b38600)',
+  'ds3-warning-bold-active':
+    'var(--ds3-background-warning-bold-active, #b38600)',
 
   /* SUCCESS */
   'ds3-success': 'var(--ds3-background-success, #dcfff1)',
   'ds3-success-hover': 'var(--ds3-background-success-hover, #baf3db)',
-  'ds3-success-pressed': 'var(--ds3-background-success-pressed, #7ee2b8)',
+  'ds3-success-active': 'var(--ds3-background-success-active, #7ee2b8)',
   'ds3-success-bold': 'var(--ds3-background-success-bold, #1f845a)',
   'ds3-success-bold-hover':
     'var(--ds3-background-success-bold-hover, #216e4e)',
-  'ds3-success-bold-pressed':
-    'var(--ds3-background-success-bold-pressed, #164b35)',
+  'ds3-success-bold-active':
+    'var(--ds3-background-success-bold-active, #164b35)',
 
   /* DISCOVERY */
   'ds3-discovery': 'var(--ds3-background-discovery, #f3f0ff)',
   'ds3-discovery-hover': 'var(--ds3-background-discovery-hover, #dfd8fd)',
-  'ds3-discovery-pressed': 'var(--ds3-background-discovery-pressed, #b8acf6)',
+  'ds3-discovery-active': 'var(--ds3-background-discovery-active, #b8acf6)',
   'ds3-discovery-bold': 'var(--ds3-background-discovery-bold, #6e5dc6)',
   'ds3-discovery-bold-hover':
     'var(--ds3-background-discovery-bold-hover, #5e4db2)',
-  'ds3-discovery-bold-pressed':
-    'var(--ds3-background-discovery-bold-pressed, #352c63)',
+  'ds3-discovery-bold-active':
+    'var(--ds3-background-discovery-bold-active, #352c63)',
 
   /* INFORMATION */
   'ds3-information': 'var(--ds3-background-information, #e9f2ff)',
   'ds3-information-hover': 'var(--ds3-background-information-hover, #cce0ff)',
-  'ds3-information-pressed':
-    'var(--ds3-background-information-pressed, #85b8ff)',
+  'ds3-information-active':
+    'var(--ds3-background-information-active, #85b8ff)',
   'ds3-information-bold': 'var(--ds3-background-information-bold, #1856f5)',
   'ds3-information-bold-hover':
     'var(--ds3-background-information-bold-hover, #004ab1)',
-  'ds3-information-bold-pressed':
-    'var(--ds3-background-information-bold-pressed, #09326c)',
+  'ds3-information-bold-active':
+    'var(--ds3-background-information-bold-active, #09326c)',
 
   /* BRAND */
   'ds3-brand-subtlest': 'var(--ds3-background-brand-subtlest, #e9f2ff)',
@@ -121,16 +121,16 @@ export const ds3BackgroundColors = {
   /* ELEVATION */
   'ds3-surface': 'var(--ds3-elevation-surface, #f7f8f9)',
   'ds3-surface-hovered': 'var(--ds3-elevation-surface-hovered, #f1f2f4)',
-  'ds3-surface-pressed': 'var(--ds3-elevation-surface-pressed, #dcdfe4)',
+  'ds3-surface-active': 'var(--ds3-elevation-surface-active, #dcdfe4)',
   'ds3-surface-registration':
     'var(--ds3-elevation-surface-registration, #f4f8ff)',
   'ds3-surface-sunken': 'var(--ds3-elevation-surface-sunken, #f7f8f9)',
   'ds3-overlay': 'var(--ds3-elevation-overlay, #ffffff)',
   'ds3-overlay-hovered': 'var(--ds3-elevation-overlay-hovered, #f1f2f4)',
-  'ds3-overlay-pressed': 'var(--ds3-elevation-overlay-pressed, #dcdfe4)',
+  'ds3-overlay-active': 'var(--ds3-elevation-overlay-active, #dcdfe4)',
   'ds3-raised': 'var(--ds3-elevation-raised, #ffffff)',
   'ds3-raised-hovered': 'var(--ds3-elevation-raised-hovered, #f1f2f4)',
-  'ds3-raised-pressed': 'var(--ds3-elevation-raised-pressed, #dcdfe4)',
+  'ds3-raised-active': 'var(--ds3-elevation-raised-active, #dcdfe4)',
 
   /* CHART - Brand */
   'ds3-chart-brand': 'var(--ds3-chart-brand, #1856f5)',
@@ -139,19 +139,19 @@ export const ds3BackgroundColors = {
   /* CHART - Category */
   'ds3-chart-category-1': 'var(--ds3-chart-category-1, #388bff)',
   'ds3-chart-category-1-hover': 'var(--ds3-chart-category-1-hover, #1856f5)',
-  'ds3-chart-category-1-pressed': 'var(--ds3-chart-category-1-pressed, #09326c)',
+  'ds3-chart-category-1-active': 'var(--ds3-chart-category-1-active, #09326c)',
   'ds3-chart-category-2': 'var(--ds3-chart-category-2, #0eaca2)',
   'ds3-chart-category-2-hover': 'var(--ds3-chart-category-2-hover, #009083)',
-  'ds3-chart-category-2-pressed': 'var(--ds3-chart-category-2-pressed, #006f63)',
+  'ds3-chart-category-2-active': 'var(--ds3-chart-category-2-active, #006f63)',
   'ds3-chart-category-3': 'var(--ds3-chart-category-3, #e24471)',
   'ds3-chart-category-3-hover': 'var(--ds3-chart-category-3-hover, #cc2657)',
-  'ds3-chart-category-3-pressed': 'var(--ds3-chart-category-3-pressed, #901a4a)',
+  'ds3-chart-category-3-active': 'var(--ds3-chart-category-3-active, #901a4a)',
   'ds3-chart-category-4': 'var(--ds3-chart-category-4, #8f7ee7)',
   'ds3-chart-category-4-hover': 'var(--ds3-chart-category-4-hover, #6e5dc6)',
-  'ds3-chart-category-4-pressed': 'var(--ds3-chart-category-4-pressed, #352c63)',
+  'ds3-chart-category-4-active': 'var(--ds3-chart-category-4-active, #352c63)',
   'ds3-chart-category-5': 'var(--ds3-chart-category-5, #f38a3f)',
   'ds3-chart-category-5-hover': 'var(--ds3-chart-category-5-hover, #aa5c00)',
-  'ds3-chart-category-5-pressed': 'var(--ds3-chart-category-5-pressed, #552e00)',
+  'ds3-chart-category-5-active': 'var(--ds3-chart-category-5-active, #552e00)',
 
   /* CHART - Status */
   'ds3-chart-success': 'var(--ds3-chart-success, #22a06b)',
@@ -168,104 +168,75 @@ export const ds3BackgroundColors = {
   /* ACCENT - Green */
   'ds3-accent-green-subtle': 'var(--ds3-background-accent-green-subtle)',
   'ds3-accent-green-subtle-hover': 'var(--ds3-background-accent-green-subtle-hover)',
-  'ds3-accent-green-subtle-pressed': 'var(--ds3-background-accent-green-subtle-pressed)',
+  'ds3-accent-green-subtle-active': 'var(--ds3-background-accent-green-subtle-active)',
   'ds3-accent-green-bold': 'var(--ds3-background-accent-green-bold)',
   'ds3-accent-green-bold-hover': 'var(--ds3-background-accent-green-bold-hover)',
-  'ds3-accent-green-bold-pressed': 'var(--ds3-background-accent-green-bold-pressed)',
+  'ds3-accent-green-bold-active': 'var(--ds3-background-accent-green-bold-active)',
 
   /* ACCENT - Magenta */
   'ds3-accent-magenta-subtle': 'var(--ds3-background-accent-magenta-subtle)',
   'ds3-accent-magenta-subtle-hover': 'var(--ds3-background-accent-magenta-subtle-hover)',
-  'ds3-accent-magenta-subtle-pressed': 'var(--ds3-background-accent-magenta-subtle-pressed)',
+  'ds3-accent-magenta-subtle-active': 'var(--ds3-background-accent-magenta-subtle-active)',
   'ds3-accent-magenta-bold': 'var(--ds3-background-accent-magenta-bold)',
   'ds3-accent-magenta-bold-hover': 'var(--ds3-background-accent-magenta-bold-hover)',
-  'ds3-accent-magenta-bold-pressed': 'var(--ds3-background-accent-magenta-bold-pressed)',
+  'ds3-accent-magenta-bold-active': 'var(--ds3-background-accent-magenta-bold-active)',
 
   /* ACCENT - Orange */
   'ds3-accent-orange-subtle': 'var(--ds3-background-accent-orange-subtle)',
   'ds3-accent-orange-subtle-hover': 'var(--ds3-background-accent-orange-subtle-hover)',
-  'ds3-accent-orange-subtle-pressed': 'var(--ds3-background-accent-orange-subtle-pressed)',
+  'ds3-accent-orange-subtle-active': 'var(--ds3-background-accent-orange-subtle-active)',
   'ds3-accent-orange-bold': 'var(--ds3-background-accent-orange-bold)',
   'ds3-accent-orange-bold-hover': 'var(--ds3-background-accent-orange-bold-hover)',
-  'ds3-accent-orange-bold-pressed': 'var(--ds3-background-accent-orange-bold-pressed)',
+  'ds3-accent-orange-bold-active': 'var(--ds3-background-accent-orange-bold-active)',
 
   /* ACCENT - Yellow */
   'ds3-accent-yellow-subtle': 'var(--ds3-background-accent-yellow-subtle)',
   'ds3-accent-yellow-subtle-hover': 'var(--ds3-background-accent-yellow-subtle-hover)',
-  'ds3-accent-yellow-subtle-pressed': 'var(--ds3-background-accent-yellow-subtle-pressed)',
+  'ds3-accent-yellow-subtle-active': 'var(--ds3-background-accent-yellow-subtle-active)',
   'ds3-accent-yellow-bold': 'var(--ds3-background-accent-yellow-bold)',
   'ds3-accent-yellow-bold-hover': 'var(--ds3-background-accent-yellow-bold-hover)',
-  'ds3-accent-yellow-bold-pressed': 'var(--ds3-background-accent-yellow-bold-pressed)',
+  'ds3-accent-yellow-bold-active': 'var(--ds3-background-accent-yellow-bold-active)',
 
   /* ACCENT - Lime */
   'ds3-accent-lime-subtle': 'var(--ds3-background-accent-lime-subtle)',
   'ds3-accent-lime-subtle-hover': 'var(--ds3-background-accent-lime-subtle-hover)',
-  'ds3-accent-lime-subtle-pressed': 'var(--ds3-background-accent-lime-subtle-pressed)',
+  'ds3-accent-lime-subtle-active': 'var(--ds3-background-accent-lime-subtle-active)',
   'ds3-accent-lime-bold': 'var(--ds3-background-accent-lime-bold)',
   'ds3-accent-lime-bold-hover': 'var(--ds3-background-accent-lime-bold-hover)',
-  'ds3-accent-lime-bold-pressed': 'var(--ds3-background-accent-lime-bold-pressed)',
+  'ds3-accent-lime-bold-active': 'var(--ds3-background-accent-lime-bold-active)',
 
   /* ACCENT - Red */
   'ds3-accent-red-subtle': 'var(--ds3-background-accent-red-subtle)',
   'ds3-accent-red-subtle-hover': 'var(--ds3-background-accent-red-subtle-hover)',
-  'ds3-accent-red-subtle-pressed': 'var(--ds3-background-accent-red-subtle-pressed)',
+  'ds3-accent-red-subtle-active': 'var(--ds3-background-accent-red-subtle-active)',
   'ds3-accent-red-bold': 'var(--ds3-background-accent-red-bold)',
   'ds3-accent-red-bold-hover': 'var(--ds3-background-accent-red-bold-hover)',
-  'ds3-accent-red-bold-pressed': 'var(--ds3-background-accent-red-bold-pressed)',
+  'ds3-accent-red-bold-active': 'var(--ds3-background-accent-red-bold-active)',
 
   /* ACCENT - Blue */
   'ds3-accent-blue-subtle': 'var(--ds3-background-accent-blue-subtle)',
   'ds3-accent-blue-subtle-hover': 'var(--ds3-background-accent-blue-subtle-hover)',
-  'ds3-accent-blue-subtle-pressed': 'var(--ds3-background-accent-blue-subtle-pressed)',
+  'ds3-accent-blue-subtle-active': 'var(--ds3-background-accent-blue-subtle-active)',
   'ds3-accent-blue-bold': 'var(--ds3-background-accent-blue-bold)',
   'ds3-accent-blue-bold-hover': 'var(--ds3-background-accent-blue-bold-hover)',
-  'ds3-accent-blue-bold-pressed': 'var(--ds3-background-accent-blue-bold-pressed)',
+  'ds3-accent-blue-bold-active': 'var(--ds3-background-accent-blue-bold-active)',
 
   /* ACCENT - Purple */
   'ds3-accent-purple-subtle': 'var(--ds3-background-accent-purple-subtle)',
   'ds3-accent-purple-subtle-hover': 'var(--ds3-background-accent-purple-subtle-hover)',
-  'ds3-accent-purple-subtle-pressed': 'var(--ds3-background-accent-purple-subtle-pressed)',
+  'ds3-accent-purple-subtle-active': 'var(--ds3-background-accent-purple-subtle-active)',
   'ds3-accent-purple-bold': 'var(--ds3-background-accent-purple-bold)',
   'ds3-accent-purple-bold-hover': 'var(--ds3-background-accent-purple-bold-hover)',
-  'ds3-accent-purple-bold-pressed': 'var(--ds3-background-accent-purple-bold-pressed)',
+  'ds3-accent-purple-bold-active': 'var(--ds3-background-accent-purple-bold-active)',
 
   /* ACCENT - Teal */
   'ds3-accent-teal-subtle': 'var(--ds3-background-accent-teal-subtle)',
   'ds3-accent-teal-subtle-hover': 'var(--ds3-background-accent-teal-subtle-hover)',
-  'ds3-accent-teal-subtle-pressed': 'var(--ds3-background-accent-teal-subtle-pressed)',
+  'ds3-accent-teal-subtle-active': 'var(--ds3-background-accent-teal-subtle-active)',
   'ds3-accent-teal-bold': 'var(--ds3-background-accent-teal-bold)',
   'ds3-accent-teal-bold-hover': 'var(--ds3-background-accent-teal-bold-hover)',
-  'ds3-accent-teal-bold-pressed': 'var(--ds3-background-accent-teal-bold-pressed)',
+  'ds3-accent-teal-bold-active': 'var(--ds3-background-accent-teal-bold-active)',
 
-  /* LEGACY ALIASES (for backwards compatibility - prefer non-default versions) */
-  'ds3-neutral-default': 'var(--ds3-background-neutral, #091e420f)',
-  'ds3-neutral-subtle-default': 'var(--ds3-background-neutral-subtle, #ffffff)',
-  'ds3-neutral-bold-default': 'var(--ds3-background-neutral-bold, #44546f)',
-  'ds3-input-default': 'var(--ds3-background-input, #ffffff)',
-  'ds3-selected-default': 'var(--ds3-background-selected, #e9f2ff)',
-  'ds3-selected-bold-default': 'var(--ds3-background-selected-bold, #1856f5)',
-  'ds3-danger-default': 'var(--ds3-background-danger, #ffeceb)',
-  'ds3-danger-bold-default': 'var(--ds3-background-danger-bold, #c9372c)',
-  'ds3-warning-default': 'var(--ds3-background-warning, #fff7d6)',
-  'ds3-warning-bold-default': 'var(--ds3-background-warning-bold, #e2b203)',
-  'ds3-success-default': 'var(--ds3-background-success, #dcfff1)',
-  'ds3-success-bold-default': 'var(--ds3-background-success-bold, #1f845a)',
-  'ds3-discovery-default': 'var(--ds3-background-discovery, #f3f0ff)',
-  'ds3-discovery-bold-default': 'var(--ds3-background-discovery-bold, #6e5dc6)',
-  'ds3-information-default': 'var(--ds3-background-information, #e9f2ff)',
-  'ds3-information-bold-default': 'var(--ds3-background-information-bold, #1856f5)',
-  'ds3-background-success-default': 'var(--ds3-background-success, #dcfff1)',
-  'ds3-background-discovery-default': 'var(--ds3-background-discovery, #f3f0ff)',
-  'ds3-background-discovery-bold-default': 'var(--ds3-background-discovery-bold, #6e5dc6)',
-  'ds3-background-disabled': 'var(--ds3-background-disabled, #091e4207)',
-  'ds3-brand-hover': 'var(--ds3-background-brand-bold, #004ab1)',
-  'ds3-background-danger-bold-default': 'var(--ds3-background-danger-bold, #c9372c)',
-  'ds3-background-error-default': 'var(--ds3-background-danger, #ffeceb)',
-  'ds3-background-neutral-bold-default': 'var(--ds3-background-neutral-bold, #44546f)',
-  'ds3-blanket-graphic-error': 'var(--ds3-blanket-graphic-error, rgba(255, 255, 255, 0.80))',
-  'ds3-default': 'var(--ds3-background-neutral, #091e420f)',
-  'ds3-info-bold-default': 'var(--ds3-background-information-bold, #1856f5)',
-  'ds3-skeleton': 'var(--ds3-skeleton-base, #091e420f)',
 } as const;
 
 export const ds3BackgroundImage = {
@@ -326,14 +297,6 @@ export const ds3RingOffsetColors = {
   'ds3-raised': 'var(--ds3-elevation-raised, #ffffff)',
 } as const;
 
-export const ds3BorderRadius = {
-  'ds3-none': 'var(--floats-none, 0px)',
-  'ds3-s': 'var(--floats-20, 2px)',
-  'ds3-m': 'var(--floats-40, 4px)',
-  'ds3-l': 'var(--floats-80, 8px)',
-  'ds3-full': 'var(--floats-circular, 9999px)',
-} as const;
-
 export const ds3BorderWidth = {
   'ds3-none': 'var(--floats-none, 0px)',
   'ds3-s': 'var(--floats-10, 1px)',
@@ -361,6 +324,8 @@ export const ds3TextColors = {
   'ds3-disabled': 'var(--ds3-text-disabled, #091e4266)',
   'ds3-selected': 'var(--ds3-text-selected, #1856f5)',
   'ds3-brand': 'var(--ds3-text-brand, #1856f5)',
+  
+  /* Link */
   'ds3-link': 'var(--ds3-text-brand, #1856f5)',
 
   /* Status */
@@ -545,7 +510,6 @@ export const naDesignTokensPreset: Partial<Config> = {
       backgroundColor: ds3BackgroundColors,
       backgroundImage: ds3BackgroundImage,
       borderColor: ds3BorderColors,
-      borderRadius: ds3BorderRadius,
       borderWidth: ds3BorderWidth,
       ringColor: ds3RingColors,
       ringOffsetColor: ds3RingOffsetColors,

@@ -281,7 +281,7 @@
     --ds3-text-title:        var(--colours-neutral-light-110);
     --ds3-text-caption:      var(--colours-neutral-light-70);
     --ds3-text-inverted:     var(--colours-neutral-light-0);
-    --ds3-text-disabled:     var(--colours-alpha-light-40);
+    --ds3-text-disabled:     var(--colours-neutral-light-50);
     --ds3-text-selected:     var(--colours-blue-70);
     --ds3-text-brand:        var(--colours-blue-70);
     --ds3-text-danger:       var(--colours-red-70);
@@ -559,7 +559,7 @@
     --ds3-text-title:        var(--colours-neutral-dark-110);
     --ds3-text-caption:      var(--colours-neutral-dark-70);
     --ds3-text-inverted:     var(--colours-neutral-dark-10);
-    --ds3-text-disabled:     var(--colours-alpha-dark-40);
+    --ds3-text-disabled:     var(--colours-neutral-dark-50);
     --ds3-text-selected:     var(--colours-blue-40);
     --ds3-text-brand:        var(--colours-blue-40);
     --ds3-text-danger:       var(--colours-red-30);
