@@ -311,7 +311,7 @@
     --ds3-border-subtle:      var(--colours-alpha-light-20);
     --ds3-border-bold:        var(--colours-neutral-light-60);
     --ds3-border-disabled:    var(--colours-alpha-light-20);
-    --ds3-border-focused:     var(--colours-blue-50);
+    --ds3-border-focused:     var(--colours-blue-30);
     --ds3-border-selected:    var(--colours-blue-70);
     --ds3-border-input:       var(--colours-alpha-light-40);
     --ds3-border-brand:       var(--colours-blue-70);
@@ -589,7 +589,7 @@
     --ds3-border-subtle:      var(--colours-alpha-dark-20);
     --ds3-border-bold:        var(--colours-neutral-dark-60);
     --ds3-border-disabled:    var(--colours-alpha-dark-20);
-    --ds3-border-focused:     var(--colours-blue-60);
+    --ds3-border-focused:     var(--colours-blue-80);
     --ds3-border-selected:    var(--colours-blue-40);
     --ds3-border-input:       var(--colours-alpha-dark-40);
     --ds3-border-brand:       var(--colours-blue-40);
